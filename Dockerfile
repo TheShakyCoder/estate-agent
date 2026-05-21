@@ -1,5 +1,5 @@
 # =============================================================================
-#  Penwortham Lollipops — Production Dockerfile
+#  Acme Opticians — Production Dockerfile
 #  nginx + php-fpm + supervisor (queue workers + SSR)
 # =============================================================================
 

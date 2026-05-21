@@ -40,10 +40,10 @@ const navLinks = page.props.site.nav_links;
         <!-- ABOUT -->
         <About />
 
-        <!-- OUR SWEETS -->
+        <!-- SERVICES -->
         <Services />
 
-        <!-- EVENTS & HIRE -->
+        <!-- EYEWEAR & BRANDS -->
         <Events />
 
         <!-- NEWS -->
@@ -52,7 +52,7 @@ const navLinks = page.props.site.nav_links;
         <!-- INSTAGRAM FEED -->
         <InstagramFeed />
 
-        <!-- WEDDINGS & EVENTS CTA -->
+        <!-- BOOK AN EYE TEST CTA -->
         <Volunteer />
 
         <!-- CONTACT -->

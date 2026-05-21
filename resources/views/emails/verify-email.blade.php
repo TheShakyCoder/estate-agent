@@ -28,16 +28,19 @@
 
                     <!-- ── Header banner ── -->
                     <tr>
-                        <td style="background:linear-gradient(135deg,#db2777 0%,#ec4899 50%,#be185d 100%);padding:40px 40px 36px;text-align:center;">
+                        <td style="background:linear-gradient(135deg,#102e46 0%,#1d4f73 55%,#2a6a93 100%);padding:40px 40px 36px;text-align:center;">
 
                             <!-- Logo -->
-                            <img src="{{ config('app.url') }}/media/logo.png"
-                                 alt="Penwortham Lollipops"
-                                 width="80" height="80"
-                                 style="width:80px;height:80px;object-fit:contain;border-radius:50%;background-color:rgba(255,255,255,0.15);padding:6px;display:block;margin:0 auto 16px;" />
+                            <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto 16px;">
+                                <tr>
+                                    <td width="80" height="80" align="center" valign="middle" style="background-color:rgba(255,255,255,0.12);border-radius:50%;">
+                                        <span style="font-size:38px;line-height:1;">&#128083;</span>
+                                    </td>
+                                </tr>
+                            </table>
 
                             <p style="margin:0 0 4px;font-size:18px;font-weight:700;color:#ffffff;letter-spacing:-0.3px;">
-                                Penwortham Lollipops
+                                Acme Opticians
                             </p>
                         </td>
                     </tr>
@@ -51,14 +54,14 @@
                                 Hi {{ $user->name }},
                             </p>
                             <p style="margin:0 0 28px;font-size:15px;color:#78716c;line-height:1.6;">
-                                Thanks for joining the Lollipops family. Before you get started,
+                                Thanks for registering with Acme Opticians. Before you get started,
                                 we just need to confirm this is your email address.
                             </p>
 
                             <!-- Divider line accent -->
                             <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:28px;">
                                 <tr>
-                                    <td style="height:3px;background:linear-gradient(90deg,#ec4899,#f9a8d4,transparent);border-radius:2px;"></td>
+                                    <td style="height:3px;background:linear-gradient(90deg,#1d4f73,#e3a72b,transparent);border-radius:2px;"></td>
                                 </tr>
                             </table>
 
@@ -68,7 +71,7 @@
                                     <td align="center">
                                         <a href="{{ $verificationUrl }}"
                                            class="btn-primary"
-                                           style="display:inline-block;background-color:#ec4899;color:#ffffff;font-size:15px;font-weight:600;text-decoration:none;padding:14px 36px;border-radius:10px;letter-spacing:0.1px;">
+                                           style="display:inline-block;background-color:#1d4f73;color:#ffffff;font-size:15px;font-weight:600;text-decoration:none;padding:14px 36px;border-radius:10px;letter-spacing:0.1px;">
                                             Verify My Email Address
                                         </a>
                                     </td>
@@ -77,13 +80,13 @@
 
                             <!-- Expiry notice -->
                             <table width="100%" cellpadding="0" cellspacing="0" border="0"
-                                   style="background-color:#fdf2f8;border:1px solid #fbcfe8;border-radius:10px;margin-bottom:28px;">
+                                   style="background-color:#eef5f9;border:1px solid #d6e6ef;border-radius:10px;margin-bottom:28px;">
                                 <tr>
                                     <td style="padding:14px 18px;">
                                         <table cellpadding="0" cellspacing="0" border="0">
                                             <tr>
                                                 <td valign="top" style="padding-right:10px;font-size:18px;line-height:1;">⏱</td>
-                                                <td style="font-size:13px;color:#be185d;line-height:1.5;">
+                                                <td style="font-size:13px;color:#1d4f73;line-height:1.5;">
                                                     This link will expire in <strong>{{ $expiresMinutes }} minutes</strong>.
                                                     If it expires, simply sign in and request a new one.
                                                 </td>
@@ -95,7 +98,7 @@
 
                             <!-- Didn't request notice -->
                             <p style="margin:0;font-size:13px;color:#a8a29e;line-height:1.6;">
-                                If you didn't create an account with Penwortham Lollipops,
+                                If you didn't create an account with Acme Opticians,
                                 you can safely ignore this email — no account will be activated.
                             </p>
 
@@ -115,7 +118,7 @@
                                         <p style="margin:0 0 8px;font-size:12px;color:#a8a29e;line-height:1.5;">
                                             Copy and paste this link into your browser:
                                         </p>
-                                        <p style="margin:0;font-size:11px;color:#ec4899;word-break:break-all;line-height:1.5;">
+                                        <p style="margin:0;font-size:11px;color:#1d4f73;word-break:break-all;line-height:1.5;">
                                             {{ $verificationUrl }}
                                         </p>
                                     </td>
@@ -134,10 +137,10 @@
                                             {{ config('app.fullname') }}
                                         </p>
                                         <p style="margin:0 0 12px;font-size:12px;color:rgba(255,255,255,0.45);">
-                                            Liverpool Road, Penwortham, Preston, PR1 0TB
+                                            {{ config('site.address') }}
                                         </p>
                                         <p style="margin:0 0 16px;font-size:11px;color:rgba(255,255,255,0.3);">
-                                            Penwortham Lollipops
+                                            Acme Opticians
                                         </p>
                                         <!-- Separator dots -->
                                         <p style="margin:0;font-size:11px;color:rgba(255,255,255,0.25);">

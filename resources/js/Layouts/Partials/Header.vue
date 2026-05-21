@@ -37,10 +37,18 @@ onUnmounted(() => {
 
                     <!-- Logo -->
                     <a href="/" class="flex items-center gap-3 shrink-0">
-                        <img src="/media/logo.png" alt="Lollipops Logo" class="h-14 w-auto" />
+                        <div class="w-12 h-12 rounded-xl bg-brand-gradient flex items-center justify-center shadow-md">
+                            <svg class="w-7 h-auto" viewBox="0 0 400 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M155 80 Q200 65 245 80" stroke="#e3a72b" stroke-width="14" stroke-linecap="round" fill="none"/>
+                                <path d="M30 70 Q15 75 18 95" stroke="#e3a72b" stroke-width="14" stroke-linecap="round" fill="none"/>
+                                <path d="M370 70 Q385 75 382 95" stroke="#e3a72b" stroke-width="14" stroke-linecap="round" fill="none"/>
+                                <ellipse cx="95" cy="85" rx="65" ry="50" stroke="#e3a72b" stroke-width="14" fill="none"/>
+                                <ellipse cx="305" cy="85" rx="65" ry="50" stroke="#e3a72b" stroke-width="14" fill="none"/>
+                            </svg>
+                        </div>
                         <div class="hidden md:block">
-                            <p class="text-lg font-semibold text-brand-600 leading-tight font-display">Penwortham</p>
-                            <p class="text-md text-candy-purple tracking-wider leading-tight font-display">Lollipops</p>
+                            <p class="text-lg font-semibold text-brand-700 leading-tight font-display">Acme</p>
+                            <p class="text-sm text-accent-600 tracking-widest uppercase leading-tight font-display font-semibold">Opticians</p>
                         </div>
                     </a>
 
@@ -85,8 +93,8 @@ onUnmounted(() => {
                         Dashboard
                         </Link>
                         <a href="#contact"
-                            class="px-5 py-2.5 text-white text-sm font-bold rounded-xl hover:opacity-90 transition-all shadow-md" style="background: linear-gradient(135deg, #ff1a75, #d946ef)">
-                            Visit Us
+                            class="px-5 py-2.5 text-white text-sm font-bold rounded-xl hover:opacity-90 transition-all shadow-md" style="background: linear-gradient(135deg, #102e46, #2a6a93)">
+                            Book Eye Test
                         </a>
                     </div>
 
@@ -135,8 +143,8 @@ onUnmounted(() => {
                     Login
                     </Link>
                     <a href="#contact"
-                        class="block text-center px-4 py-2.5 bg-brand-500 text-white text-sm font-semibold rounded-xl hover:bg-brand-600 transition-colors">
-                        Visit Us
+                        class="block text-center px-4 py-2.5 bg-brand-600 text-white text-sm font-semibold rounded-xl hover:bg-brand-700 transition-colors">
+                        Book Eye Test
                     </a>
                 </div>
             </div>

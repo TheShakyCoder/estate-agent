@@ -4,24 +4,24 @@ import { Link } from '@inertiajs/vue3';
 const news = [
     {
         date: '1 May 2026',
-        title: 'New American candy shipment just landed',
-        excerpt: 'We\'ve got a fresh batch of viral TikTok snacks, Takis, and limited-edition Reese\'s flavours — grab them before they\'re gone!',
-        tag: 'New Stock',
+        title: 'New OCT scanner now in every eye test',
+        excerpt: 'Our upgraded OCT machine captures a detailed 3D scan of the back of your eye — included in every standard examination at no extra cost.',
+        tag: 'Technology',
         tagColor: 'bg-brand-100 text-brand-700',
     },
     {
         date: '15 Apr 2026',
-        title: 'Pick \'n\' mix trailer now available for hire',
-        excerpt: 'Bring the pick \'n\' mix experience to your wedding, party, or corporate event. Our mobile sweet shop is ready to roll!',
-        tag: 'Hire',
-        tagColor: 'bg-purple-100 text-purple-700',
+        title: 'Lindberg trunk show — Saturday 18 May',
+        excerpt: 'Browse the full Lindberg titanium collection with a brand representative on hand. Book a private appointment to design your bespoke frame.',
+        tag: 'Event',
+        tagColor: 'bg-accent-100 text-accent-700',
     },
     {
         date: '1 Apr 2026',
-        title: 'Summer sweet hampers now available',
-        excerpt: 'The perfect gift for any sweet tooth — our handmade hampers are packed with a mix of retro, American, and pick \'n\' mix favourites.',
-        tag: 'Gifts',
-        tagColor: 'bg-amber-100 text-amber-700',
+        title: 'Dry eye clinic now open',
+        excerpt: 'Our new dry eye clinic offers IPL treatment, meibomian gland imaging and tailored care plans for chronic dry eye sufferers.',
+        tag: 'New Service',
+        tagColor: 'bg-emerald-100 text-emerald-700',
     },
 ];
 </script>
@@ -34,7 +34,7 @@ const news = [
                     <span class="text-xs font-semibold uppercase tracking-widest text-brand-500 mb-3 block">Latest
                         News</span>
                     <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-warm-900">
-                        What's <span class="text-gradient-candy">new</span> in the shop
+                        What's <span class="text-gradient-brand">new</span> at the practice
                     </h2>
                 </div>
                 <Link href="/news-updates"

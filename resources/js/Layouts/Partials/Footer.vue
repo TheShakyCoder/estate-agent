@@ -14,15 +14,23 @@ const page = usePage();
             <div class="grid md:grid-cols-4 gap-10 mb-10">
                 <div class="md:col-span-2">
                     <div class="flex items-center gap-3 mb-4">
-                        <img src="/media/logo.png" alt="Lollipops Logo" class="h-14 w-auto brightness-0 invert opacity-90" />
+                        <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
+                            <svg class="w-7 h-auto" viewBox="0 0 400 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M155 80 Q200 65 245 80" stroke="#e3a72b" stroke-width="14" stroke-linecap="round" fill="none"/>
+                                <path d="M30 70 Q15 75 18 95" stroke="#e3a72b" stroke-width="14" stroke-linecap="round" fill="none"/>
+                                <path d="M370 70 Q385 75 382 95" stroke="#e3a72b" stroke-width="14" stroke-linecap="round" fill="none"/>
+                                <ellipse cx="95" cy="85" rx="65" ry="50" stroke="#e3a72b" stroke-width="14" fill="none"/>
+                                <ellipse cx="305" cy="85" rx="65" ry="50" stroke="#e3a72b" stroke-width="14" fill="none"/>
+                            </svg>
+                        </div>
                         <div>
-                            <p class="font-semibold text-white font-display">Penwortham</p>
-                            <p class="text-sm text-brand-300 font-display">Lollipops</p>
+                            <p class="font-semibold text-white font-display">Acme</p>
+                            <p class="text-sm text-accent-300 tracking-widest uppercase font-display font-semibold">Opticians</p>
                         </div>
                     </div>
                     <p class="text-white/60 text-sm leading-relaxed max-w-xs">
-                        The biggest self-serve pick 'n' mix in the North West! American candy, retro sweets, and
-                        everything in between at our Penwortham shop.
+                        Independent opticians on the high street since {{ page.props.site.established }}. Comprehensive eye tests,
+                        designer frames, and contact lens fittings — delivered by a family-run team.
                     </p>
                 </div>
 
@@ -74,7 +82,7 @@ const page = usePage();
 
             <div
                 class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/40">
-                <p>&copy; Penwortham Lollipops {{ new Date().getFullYear() }}. All rights reserved.</p>
+                <p>&copy; Acme Opticians {{ new Date().getFullYear() }}. All rights reserved.</p>
                 <div class="flex gap-5">
                     <a href="#" class="hover:text-white/70 transition-colors">Privacy Policy</a>
                     <a href="#" class="hover:text-white/70 transition-colors">Terms of Use</a>

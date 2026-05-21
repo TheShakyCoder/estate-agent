@@ -30,26 +30,34 @@ defineProps({
             <!-- Centre content -->
             <div class="relative flex-1 flex flex-col justify-center px-10 xl:px-14">
                 <Link href="/" class="flex items-center gap-4 mb-10">
-                    <img src="/media/logo.png" alt="Lollipops Logo" class="h-16 w-auto brightness-0 invert opacity-90" />
+                    <div class="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center">
+                        <svg class="w-10 h-auto" viewBox="0 0 400 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M155 80 Q200 65 245 80" stroke="#e3a72b" stroke-width="14" stroke-linecap="round" fill="none"/>
+                            <path d="M30 70 Q15 75 18 95" stroke="#e3a72b" stroke-width="14" stroke-linecap="round" fill="none"/>
+                            <path d="M370 70 Q385 75 382 95" stroke="#e3a72b" stroke-width="14" stroke-linecap="round" fill="none"/>
+                            <ellipse cx="95" cy="85" rx="65" ry="50" stroke="#e3a72b" stroke-width="14" fill="none"/>
+                            <ellipse cx="305" cy="85" rx="65" ry="50" stroke="#e3a72b" stroke-width="14" fill="none"/>
+                        </svg>
+                    </div>
                     <div>
-                        <p class="font-display font-bold text-lg leading-tight">Penwortham Lollipops</p>
+                        <p class="font-display font-bold text-lg leading-tight">Acme Opticians</p>
                     </div>
                 </Link>
 
                 <h1 class="font-display text-3xl xl:text-4xl font-bold leading-tight mb-4">
-                    Portal
+                    Practice Portal
                 </h1>
                 <p class="text-white/75 text-base leading-relaxed mb-10 max-w-sm">
-                    Manage your shop, news, events, and more — all in one place.
+                    Manage appointments, patient records, news, and stock — all in one place.
                 </p>
 
                 <!-- Feature bullets -->
                 <ul class="space-y-4">
                     <li v-for="item in [
-                        { icon: '📅', text: 'Create and manage community events' },
-                        { icon: '📰', text: 'Publish news and announcements' },
-                        { icon: '👥', text: 'View and manage memberships' },
-                        { icon: '📊', text: 'Track activity across the centre' },
+                        { icon: '📅', text: 'Manage eye test bookings' },
+                        { icon: '📰', text: 'Publish news and eye care articles' },
+                        { icon: '👥', text: 'View patient records and history' },
+                        { icon: '📊', text: 'Track stock and orders' },
                     ]" :key="item.text" class="flex items-center gap-3 text-white/80 text-sm">
                         <span class="w-8 h-8 bg-white/15 rounded-lg flex items-center justify-center text-base shrink-0">{{ item.icon }}</span>
                         {{ item.text }}
@@ -59,7 +67,7 @@ defineProps({
 
             <!-- Footer -->
             <div class="relative px-10 pb-10">
-                <p class="text-white/40 text-xs">&copy; {{ new Date().getFullYear() }} Penwortham Lollipops</p>
+                <p class="text-white/40 text-xs">&copy; {{ new Date().getFullYear() }} Acme Opticians</p>
             </div>
         </div>
 
@@ -69,9 +77,17 @@ defineProps({
             <!-- Mobile header -->
             <div class="lg:hidden flex items-center justify-between px-6 pt-6 pb-4">
                 <Link href="/" class="flex items-center gap-3">
-                    <img src="/media/logo.png" alt="Lollipops Logo" class="h-10 w-auto" />
+                    <div class="w-10 h-10 rounded-lg bg-brand-gradient flex items-center justify-center">
+                        <svg class="w-6 h-auto" viewBox="0 0 400 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M155 80 Q200 65 245 80" stroke="#e3a72b" stroke-width="14" stroke-linecap="round" fill="none"/>
+                            <path d="M30 70 Q15 75 18 95" stroke="#e3a72b" stroke-width="14" stroke-linecap="round" fill="none"/>
+                            <path d="M370 70 Q385 75 382 95" stroke="#e3a72b" stroke-width="14" stroke-linecap="round" fill="none"/>
+                            <ellipse cx="95" cy="85" rx="65" ry="50" stroke="#e3a72b" stroke-width="14" fill="none"/>
+                            <ellipse cx="305" cy="85" rx="65" ry="50" stroke="#e3a72b" stroke-width="14" fill="none"/>
+                        </svg>
+                    </div>
                     <div>
-                        <p class="font-display font-semibold text-brand-600 text-sm leading-tight">Penwortham Lollipops</p>
+                        <p class="font-display font-semibold text-brand-600 text-sm leading-tight">Acme Opticians</p>
                     </div>
                 </Link>
                 <Link href="/" class="text-xs text-warm-500 hover:text-brand-600 transition-colors font-medium">

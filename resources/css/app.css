@@ -3,21 +3,21 @@
 @tailwind utilities;
 
 @layer utilities {
-    .text-gradient-candy {
-        background: linear-gradient(135deg, #ffd43b 0%, #ff1a75 40%, #8b5cf6 100%);
+    .text-gradient-brand {
+        background: linear-gradient(135deg, #2a6a93 0%, #1d4f73 50%, #e3a72b 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
     }
-    .bg-candy-gradient {
-        background: linear-gradient(135deg, #ff1a75 0%, #d946ef 50%, #8b5cf6 100%);
+    .bg-brand-gradient {
+        background: linear-gradient(135deg, #102e46 0%, #1d4f73 55%, #2a6a93 100%);
     }
-    .bg-candy-gradient-warm {
-        background: linear-gradient(135deg, #ff1a75 0%, #f97316 50%, #ffd43b 100%);
+    .bg-brand-gradient-warm {
+        background: linear-gradient(135deg, #1d4f73 0%, #2a6a93 50%, #e3a72b 100%);
     }
     .hero-blob {
         border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-        animation: morph 8s ease-in-out infinite;
+        animation: morph 10s ease-in-out infinite;
     }
 }
 
