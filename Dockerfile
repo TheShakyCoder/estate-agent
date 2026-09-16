@@ -65,15 +65,20 @@ COPY --from=build-assets /app/public/build /var/www/html/public/build
 COPY --from=build-assets /app/bootstrap/ssr /var/www/html/bootstrap/ssr
 
 # Install PHP production deps
-RUN composer install --prefer-dist --optimize-autoloader --no-dev --no-interaction
+# APP_URL is pinned here (not read from build-time env) because artisan's
+# console bootstrapper builds a Request from it on every invocation
+# (composer's package:discover post-autoload script included); a missing or
+# malformed build-time APP_URL crashes the build with "Host is malformed".
+# The entrypoint rebuilds all caches against the real runtime APP_URL anyway.
+RUN APP_URL=http://localhost composer install --prefer-dist --optimize-autoloader --no-dev --no-interaction
 
 # Ensure directories exist and are writable
 RUN mkdir -p storage/framework/{sessions,views,cache} storage/logs bootstrap/cache \
     && chown -R www-data:www-data storage bootstrap/cache \
     && chmod -R 775 storage bootstrap/cache
 
-# Cache routes at build time (safe — doesn't need env vars)
-RUN php artisan route:cache
+# Cache routes at build time (APP_URL pinned for the same reason as above)
+RUN APP_URL=http://localhost php artisan route:cache
 
 # Entrypoint handles runtime boot (migrations, config cache, etc.)
 COPY .docker/entrypoint.sh /entrypoint.sh
