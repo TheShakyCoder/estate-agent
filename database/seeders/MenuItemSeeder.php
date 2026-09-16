@@ -12,7 +12,10 @@ class MenuItemSeeder extends Seeder
      */
     public function run(): void
     {
-        // Get the default menu items from config
+        // Idempotent: wipe and re-insert from config so the seeder can be
+        // re-run after rebrands / nav restructures.
+        MenuItem::query()->delete();
+
         $defaultItems = config('site.nav_links');
 
         foreach ($defaultItems as $index => $item) {

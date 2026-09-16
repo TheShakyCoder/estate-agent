@@ -31,47 +31,60 @@ onUnmounted(() => {
 
 <template>
     <header>
-        <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-warm-200">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="flex h-20 items-center justify-between">
+        <!-- Slim utility bar -->
+        <div class="hidden sm:block bg-brand-900 text-white/70 text-xs">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-9">
+                <p>Independent estate agents in Penwortham &middot; Since {{ $page.props.site.established }}</p>
+                <div class="flex items-center gap-5">
+                    <a :href="'tel:' + $page.props.site.telephone" class="hover:text-white transition-colors">
+                        {{ $page.props.site.telephone }}
+                    </a>
+                    <a :href="'mailto:' + $page.props.site.email" class="hover:text-white transition-colors hidden md:inline">
+                        {{ $page.props.site.email }}
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-warm-100">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                <div class="flex h-20 items-center justify-between gap-4">
 
                     <!-- Logo -->
-                    <a href="/" class="flex items-center gap-3 shrink-0">
-                        <div class="w-12 h-12 rounded-xl bg-brand-gradient flex items-center justify-center shadow-md">
-                            <svg class="w-7 h-auto" viewBox="0 0 400 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M155 80 Q200 65 245 80" stroke="#e3a72b" stroke-width="14" stroke-linecap="round" fill="none"/>
-                                <path d="M30 70 Q15 75 18 95" stroke="#e3a72b" stroke-width="14" stroke-linecap="round" fill="none"/>
-                                <path d="M370 70 Q385 75 382 95" stroke="#e3a72b" stroke-width="14" stroke-linecap="round" fill="none"/>
-                                <ellipse cx="95" cy="85" rx="65" ry="50" stroke="#e3a72b" stroke-width="14" fill="none"/>
-                                <ellipse cx="305" cy="85" rx="65" ry="50" stroke="#e3a72b" stroke-width="14" fill="none"/>
+                    <Link href="/" class="flex items-center gap-3 shrink-0">
+                        <div class="w-10 h-10 bg-brand-900 flex items-center justify-center">
+                            <svg class="w-5 h-auto" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 55 L50 25 L82 55" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M28 50 L28 78 L72 78 L72 50" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M44 78 L44 60 L56 60 L56 78" stroke="#2dcab8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
-                        <div class="hidden md:block">
-                            <p class="text-lg font-semibold text-brand-700 leading-tight font-display">Acme</p>
-                            <p class="text-sm text-accent-600 tracking-widest uppercase leading-tight font-display font-semibold">Opticians</p>
+                        <div class="block">
+                            <p class="text-lg font-bold text-brand-900 leading-none tracking-display">Acme Estate Agents</p>
+                            <p class="text-[10px] text-warm-500 tracking-[0.25em] uppercase leading-none mt-1.5 font-medium">Sales &middot; Lettings &middot; Valuations</p>
                         </div>
-                    </a>
+                    </Link>
 
                     <!-- Desktop nav -->
                     <div class="hidden lg:flex items-center gap-1">
                         <div v-for="(link, idx) in navLinks" :key="idx" class="relative group">
                             <Link v-if="!link.children || link.children.length === 0" :href="link.href"
-                                class="px-2 py-2 text-sm font-medium text-warm-700 rounded-lg hover:bg-brand-50 hover:text-brand-600 transition-colors">
+                                class="px-3 py-2 text-sm font-semibold text-brand-800 hover:text-accent-600 transition-colors">
                                 {{ link.label }}
                             </Link>
                             <button v-else type="button"
-                                class="px-2 py-2 text-sm font-medium text-warm-700 rounded-lg hover:bg-brand-50 hover:text-brand-600 transition-colors flex items-center gap-1"
+                                class="px-3 py-2 text-sm font-semibold text-brand-800 hover:text-accent-600 transition-colors flex items-center gap-1"
                                 @click="openDropdown = openDropdown === idx ? null : idx">
                                 {{ link.label }}
-                                <svg class="w-4 h-4 transition-transform" :class="{ 'rotate-180': openDropdown === idx }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                                <svg class="w-3 h-3 transition-transform" :class="{ 'rotate-180': openDropdown === idx }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                                 </svg>
                             </button>
 
                             <div v-if="link.children && link.children.length > 0 && openDropdown === idx"
-                                 class="absolute left-0 mt-0 w-48 bg-white border border-warm-200 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                                 class="absolute left-0 mt-2 w-56 bg-white border border-warm-200 shadow-lg">
                                 <Link v-for="(child, cidx) in link.children" :key="cidx" :href="child.href"
-                                   class="block px-4 py-2.5 text-sm text-warm-700 hover:bg-brand-50 hover:text-brand-600 transition-colors first:rounded-t-xl last:rounded-b-xl">
+                                   class="block px-5 py-3 text-sm text-brand-800 hover:bg-cream-100 hover:text-accent-600 transition-colors border-b border-warm-100 last:border-b-0">
                                     {{ child.label }}
                                 </Link>
                             </div>
@@ -79,72 +92,65 @@ onUnmounted(() => {
                     </div>
 
                     <!-- CTA buttons -->
-                    <div class="hidden lg:flex items-center gap-3">
+                    <div class="hidden lg:flex items-center gap-4">
                         <Link v-if="canLogin && !$page.props.auth?.user" :href="route('login')"
-                            class="px-2 py-2 text-sm font-medium text-brand-600 hover:text-brand-700 transition-colors">
-                        Login
-                        </Link>
-                        <Link v-if="canRegister && !$page.props.auth?.user" :href="route('register')"
-                            class="px-2 py-2 text-sm font-medium text-brand-600 hover:text-brand-700 transition-colors">
-                        Register
+                            class="text-sm font-semibold text-warm-600 hover:text-accent-600 transition-colors">
+                        Sign in
                         </Link>
                         <Link v-if="canLogin && $page.props.auth?.user" :href="route('dashboard')"
-                            class="px-2 py-2 text-sm font-medium text-brand-600 hover:text-brand-700 transition-colors">
-                        Dashboard
+                            class="text-sm font-semibold text-warm-600 hover:text-accent-600 transition-colors">
+                        Office
                         </Link>
-                        <a href="#contact"
-                            class="px-5 py-2.5 text-white text-sm font-bold rounded-xl hover:opacity-90 transition-all shadow-md" style="background: linear-gradient(135deg, #102e46, #2a6a93)">
-                            Book Eye Test
+                        <a href="#valuation"
+                            class="px-5 py-3 bg-accent-500 text-white text-[12px] tracking-[0.2em] uppercase font-semibold hover:bg-accent-600 transition-colors">
+                            Book a Valuation
                         </a>
                     </div>
 
                     <!-- Mobile hamburger -->
                     <button @click="mobileMenuOpen = !mobileMenuOpen"
-                        class="lg:hidden p-2 rounded-lg text-warm-600 hover:bg-warm-100 transition-colors">
-                        <svg v-if="!mobileMenuOpen" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16" />
+                        class="lg:hidden p-2 text-brand-800 hover:text-accent-600 transition-colors">
+                        <svg v-if="!mobileMenuOpen" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                         <svg v-else class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M6 18L18 6M6 6l12 12" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
                 </div>
             </div>
 
             <!-- Mobile menu -->
-            <div v-if="mobileMenuOpen" class="lg:hidden border-t border-warm-100 bg-white px-4 pb-4 pt-2 space-y-1">
+            <div v-if="mobileMenuOpen" class="lg:hidden border-t border-warm-200 bg-white px-4 pb-6 pt-3 space-y-1">
                 <template v-for="(link, idx) in navLinks" :key="idx">
                     <a v-if="!link.children || link.children.length === 0" :href="link.href" @click="mobileMenuOpen = false"
-                        class="block px-4 py-2.5 text-sm font-medium text-warm-700 rounded-lg hover:bg-brand-50 hover:text-brand-600 transition-colors">
+                        class="block px-4 py-3 text-sm font-semibold text-brand-800 hover:text-accent-600 transition-colors border-b border-warm-100">
                         {{ link.label }}
                     </a>
                     <div v-else>
                         <button @click="openDropdown = openDropdown === idx ? null : idx"
-                            class="w-full text-left px-4 py-2.5 text-sm font-medium text-warm-700 rounded-lg hover:bg-brand-50 hover:text-brand-600 transition-colors flex items-center justify-between">
+                            class="w-full text-left px-4 py-3 text-sm font-semibold text-brand-800 hover:text-accent-600 transition-colors flex items-center justify-between border-b border-warm-100">
                             {{ link.label }}
-                            <svg class="w-4 h-4 transition-transform" :class="{ 'rotate-180': openDropdown === idx }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                            <svg class="w-3 h-3 transition-transform" :class="{ 'rotate-180': openDropdown === idx }" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                             </svg>
                         </button>
-                        <div v-if="openDropdown === idx" class="ml-4 mt-1 space-y-1 border-l-2 border-warm-100">
+                        <div v-if="openDropdown === idx" class="ml-4 mt-1 space-y-1">
                             <a v-for="(child, cidx) in link.children" :key="cidx" :href="child.href" @click="mobileMenuOpen = false"
-                               class="block px-4 py-2.5 text-sm text-warm-600 hover:text-brand-600 transition-colors">
+                               class="block px-4 py-2.5 text-sm text-warm-600 hover:text-accent-600 transition-colors">
                                 {{ child.label }}
                             </a>
                         </div>
                     </div>
                 </template>
-                <div class="pt-2 border-t border-warm-100 flex flex-col gap-2">
+                <div class="pt-4 flex flex-col gap-3">
                     <Link v-if="canLogin && !$page.props.auth?.user" :href="route('login')"
-                        class="block px-4 py-2.5 text-sm font-medium text-brand-600 rounded-lg hover:bg-brand-50 transition-colors">
-                    Login
+                        class="block px-4 py-2.5 text-sm font-semibold text-warm-600 hover:text-accent-600 transition-colors">
+                    Sign in
                     </Link>
-                    <a href="#contact"
-                        class="block text-center px-4 py-2.5 bg-brand-600 text-white text-sm font-semibold rounded-xl hover:bg-brand-700 transition-colors">
-                        Book Eye Test
+                    <a href="#valuation" @click="mobileMenuOpen = false"
+                        class="block text-center px-4 py-3 bg-accent-500 text-white text-[12px] tracking-[0.2em] uppercase font-semibold hover:bg-accent-600 transition-colors">
+                        Book a Valuation
                     </a>
                 </div>
             </div>

@@ -27,33 +27,33 @@ const navLinks = page.props.site.nav_links;
 
     <Head :title="site.fullname" />
 
-    <div class="font-sans antialiased text-warm-800 bg-white">
+    <div class="font-sans antialiased text-brand-900 bg-white">
 
         <Header :navLinks="navLinks" :canLogin="canLogin" :canRegister="canRegister" />
 
-        <!-- HERO -->
+        <!-- HERO + TAGLINE -->
         <Hero :site="site" />
 
-        <!-- STATS -->
+        <!-- SOCIAL PROOF STATS -->
         <Stats />
 
-        <!-- ABOUT -->
-        <About />
-
-        <!-- SERVICES -->
+        <!-- NEW TO MARKET -->
         <Services />
 
-        <!-- EYEWEAR & BRANDS -->
-        <Events />
+        <!-- THREE-COLUMN CTA -->
+        <Volunteer />
 
-        <!-- NEWS -->
+        <!-- ABOUT THE OFFICE -->
+        <About />
+
+        <!-- CLIENT REVIEWS -->
         <News />
 
-        <!-- INSTAGRAM FEED -->
-        <InstagramFeed />
+        <!-- THE TEAM -->
+        <Events />
 
-        <!-- BOOK AN EYE TEST CTA -->
-        <Volunteer />
+        <!-- TRUST BADGES -->
+        <InstagramFeed />
 
         <!-- CONTACT -->
         <Contact :site="site" />

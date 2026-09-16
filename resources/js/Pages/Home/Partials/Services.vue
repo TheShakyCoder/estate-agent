@@ -1,74 +1,117 @@
 <script setup>
-const services = [
+const properties = [
     {
-        icon: '&#128065;',
-        title: 'Comprehensive Eye Tests',
-        desc: 'A thorough 30-minute examination including OCT retinal scan, glaucoma check, and prescription update. NHS-funded tests available.',
-        color: 'bg-brand-50 border-brand-200',
-        iconBg: 'bg-brand-100',
+        price: '£325,000',
+        address: '14 Liverpool Road',
+        area: 'Penwortham',
+        beds: 4, baths: 2, recep: 2,
+        tag: 'New',
+        tagColor: 'bg-accent-500 text-white',
+        image: '/images/property-1.jpg',
     },
     {
-        icon: '&#128083;',
-        title: 'Designer Frames',
-        desc: 'Over 200 frames from Ray-Ban, Tom Ford, Persol, Lindberg and more — plus a curated own-label range with two-year warranties.',
-        color: 'bg-sky-50 border-sky-200',
-        iconBg: 'bg-sky-100',
+        price: '£245,000',
+        address: 'Cob Castle Lane',
+        area: 'Longton',
+        beds: 3, baths: 1, recep: 2,
+        tag: 'For sale',
+        tagColor: 'bg-brand-800 text-white',
+        image: '/images/property-2.jpg',
     },
     {
-        icon: '&#129405;',
-        title: 'Contact Lenses',
-        desc: 'Free trial fittings for daily, monthly, and multifocal lenses. We also fit specialist toric and rigid gas-permeable lenses.',
-        color: 'bg-indigo-50 border-indigo-200',
-        iconBg: 'bg-indigo-100',
+        price: '£189,950',
+        address: '7 Howick Park Avenue',
+        area: 'Penwortham',
+        beds: 2, baths: 1, recep: 1,
+        tag: 'New',
+        tagColor: 'bg-accent-500 text-white',
+        image: '/images/property-3.jpg',
     },
     {
-        icon: '&#9728;&#65039;',
-        title: 'Prescription Sunglasses',
-        desc: 'Polarised, photochromic and tinted lenses in a wide range of designer sunglass frames — perfect for driving and sport.',
-        color: 'bg-accent-50 border-accent-200',
-        iconBg: 'bg-accent-100',
-    },
-    {
-        icon: '&#127909;',
-        title: 'Children\'s Eye Care',
-        desc: 'Friendly, patient eye tests for children of all ages. Free NHS tests for under-16s, and a fun range of robust kids\' frames.',
-        color: 'bg-rose-50 border-rose-200',
-        iconBg: 'bg-rose-100',
-    },
-    {
-        icon: '&#128300;',
-        title: 'OCT & Dry Eye Clinic',
-        desc: 'In-depth OCT scans for macular and glaucoma monitoring, plus a dedicated dry eye clinic with IPL treatment.',
-        color: 'bg-emerald-50 border-emerald-200',
-        iconBg: 'bg-emerald-100',
+        price: '£495,000',
+        address: 'Whittingham Road',
+        area: 'Hutton',
+        beds: 5, baths: 3, recep: 3,
+        tag: 'Sold STC',
+        tagColor: 'bg-warm-200 text-warm-700',
+        image: '/images/property-4.jpg',
     },
 ];
 </script>
 
 <template>
-    <section id="services" class="py-20 bg-white">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-14">
-                <span class="text-xs font-bold uppercase tracking-widest text-brand-500 mb-3 block">Our Services</span>
-                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-warm-900">
-                    Complete care for <span class="text-gradient-brand">every pair of eyes</span>
-                </h2>
-                <p class="text-warm-500 mt-4 max-w-xl mx-auto">
-                    From routine eye tests to specialist contact lens fittings — everything you need under one roof.
-                </p>
+    <section id="properties" class="py-20 lg:py-24 bg-cream-100 border-y border-warm-100">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-5">
+                <div>
+                    <p class="eyebrow text-accent-600 mb-3">New to market</p>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-900 tracking-display leading-[1.1]">
+                        Our latest <span class="accent-italic">properties</span>.
+                    </h2>
+                </div>
+                <a href="#properties"
+                    class="inline-flex items-center gap-2 self-start text-sm font-semibold text-accent-600 hover:text-accent-700 transition-colors">
+                    View all listings
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </a>
             </div>
 
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div v-for="service in services" :key="service.title"
-                    class="group p-6 rounded-2xl border-2 transition-all hover:shadow-lg hover:-translate-y-1 cursor-default"
-                    :class="service.color">
-                    <div class="w-12 h-12 rounded-xl flex items-center justify-center text-2xl mb-4"
-                        :class="service.iconBg" v-html="service.icon">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a v-for="property in properties" :key="property.address"
+                    href="#"
+                    class="group block bg-white border border-warm-100 hover:border-accent-300 hover:shadow-md transition-all">
+
+                    <!-- Image -->
+                    <div class="relative aspect-[4/3] overflow-hidden">
+                        <img :src="property.image" :alt="`${property.address}, ${property.area}`"
+                             class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+
+                        <!-- Tag -->
+                        <span class="absolute top-3 left-3 px-3 py-1 text-[10px] tracking-[0.2em] uppercase font-semibold shadow-sm"
+                              :class="property.tagColor">
+                            {{ property.tag }}
+                        </span>
                     </div>
-                    <h3 class="font-semibold text-warm-900 text-base mb-2">{{ service.title }}</h3>
-                    <p class="text-sm text-warm-600 leading-relaxed">{{ service.desc }}</p>
-                </div>
+
+                    <!-- Body -->
+                    <div class="p-5">
+                        <p class="text-xl font-bold text-brand-900 tracking-display">{{ property.price }}</p>
+                        <p class="text-sm text-brand-800 mt-1 font-medium">{{ property.address }}</p>
+                        <p class="text-xs text-warm-500 mt-0.5">{{ property.area }}</p>
+
+                        <!-- Icons row -->
+                        <div class="mt-4 pt-4 border-t border-warm-100 flex items-center gap-4 text-xs text-warm-600">
+                            <span class="flex items-center gap-1.5" :title="`${property.beds} bedrooms`">
+                                <svg class="w-4 h-4 text-warm-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12V8a2 2 0 012-2h14a2 2 0 012 2v4M3 12v6a1 1 0 001 1h1a1 1 0 001-1v-2h12v2a1 1 0 001 1h1a1 1 0 001-1v-6M3 12h18M7 12V9h4v3"/>
+                                </svg>
+                                {{ property.beds }}
+                            </span>
+                            <span class="flex items-center gap-1.5" :title="`${property.baths} bathrooms`">
+                                <svg class="w-4 h-4 text-warm-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 14h16M5 14v3a3 3 0 003 3h8a3 3 0 003-3v-3M7 14V7a2 2 0 012-2h1a2 2 0 012 2v1"/>
+                                </svg>
+                                {{ property.baths }}
+                            </span>
+                            <span class="flex items-center gap-1.5" :title="`${property.recep} reception rooms`">
+                                <svg class="w-4 h-4 text-warm-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 18v-7a2 2 0 012-2h12a2 2 0 012 2v7M4 18h16M7 18v-3h10v3"/>
+                                </svg>
+                                {{ property.recep }}
+                            </span>
+                        </div>
+                    </div>
+                </a>
             </div>
+
+            <p class="mt-10 text-center text-sm text-warm-500">
+                Register with us to be the first to hear about
+                <a href="#" class="text-accent-600 font-semibold hover:underline">off-market listings</a>
+                across South Ribble.
+            </p>
         </div>
     </section>
 </template>

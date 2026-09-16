@@ -15,53 +15,56 @@
         }
     </style>
 </head>
-<body style="margin:0;padding:0;background-color:#f5f5f4;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;-webkit-text-size-adjust:none;">
+<body style="margin:0;padding:0;background-color:#fbf9f5;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;-webkit-text-size-adjust:none;">
 
     <!-- Outer wrapper -->
-    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f5f5f4;">
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#fbf9f5;">
         <tr>
             <td align="center" style="padding:40px 16px;">
 
                 <!-- Email card -->
                 <table class="email-wrapper" width="560" cellpadding="0" cellspacing="0" border="0"
-                       style="width:560px;background-color:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.08);">
+                       style="width:560px;background-color:#ffffff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.06);border:1px solid #ece3d1;">
 
                     <!-- ── Header banner ── -->
                     <tr>
-                        <td style="background:linear-gradient(135deg,#102e46 0%,#1d4f73 55%,#2a6a93 100%);padding:40px 40px 36px;text-align:center;">
+                        <td style="background:linear-gradient(135deg,#0c1827 0%,#13243a 55%,#2f5278 100%);padding:48px 40px 40px;text-align:center;">
 
                             <!-- Logo -->
-                            <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto 16px;">
+                            <table cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto 18px;">
                                 <tr>
-                                    <td width="80" height="80" align="center" valign="middle" style="background-color:rgba(255,255,255,0.12);border-radius:50%;">
-                                        <span style="font-size:38px;line-height:1;">&#128083;</span>
+                                    <td width="76" height="76" align="center" valign="middle" style="background-color:rgba(255,255,255,0.10);border-radius:8px;">
+                                        <span style="font-size:36px;line-height:1;">&#127968;</span>
                                     </td>
                                 </tr>
                             </table>
 
-                            <p style="margin:0 0 4px;font-size:18px;font-weight:700;color:#ffffff;letter-spacing:-0.3px;">
-                                Acme Opticians
+                            <p style="margin:0 0 6px;font-size:11px;font-weight:600;color:rgba(255,255,255,0.7);letter-spacing:4px;text-transform:uppercase;">
+                                Sales &middot; Lettings &middot; Valuations
+                            </p>
+                            <p style="margin:0;font-size:22px;font-weight:600;color:#ffffff;letter-spacing:-0.3px;font-family:Georgia,'Times New Roman',serif;">
+                                Acme Estate Agents
                             </p>
                         </td>
                     </tr>
 
                     <!-- ── Body ── -->
                     <tr>
-                        <td class="email-body" style="padding:44px 48px 36px;">
+                        <td class="email-body" style="padding:48px 48px 36px;">
 
                             <!-- Greeting -->
-                            <p style="margin:0 0 8px;font-size:22px;font-weight:700;color:#1c1917;letter-spacing:-0.4px;">
-                                Hi {{ $user->name }},
+                            <p style="margin:0 0 12px;font-size:24px;font-weight:600;color:#22211d;letter-spacing:-0.4px;font-family:Georgia,'Times New Roman',serif;">
+                                Welcome, {{ $user->name }}
                             </p>
-                            <p style="margin:0 0 28px;font-size:15px;color:#78716c;line-height:1.6;">
-                                Thanks for registering with Acme Opticians. Before you get started,
-                                we just need to confirm this is your email address.
+                            <p style="margin:0 0 28px;font-size:15px;color:#65604f;line-height:1.7;">
+                                Thanks for registering with Acme Estate Agents. Before we set up property alerts and applicant matches,
+                                please confirm this is your email address.
                             </p>
 
                             <!-- Divider line accent -->
-                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:28px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:32px;">
                                 <tr>
-                                    <td style="height:3px;background:linear-gradient(90deg,#1d4f73,#e3a72b,transparent);border-radius:2px;"></td>
+                                    <td style="height:2px;background:linear-gradient(90deg,#2f5278,#c2953d,transparent);border-radius:2px;"></td>
                                 </tr>
                             </table>
 
@@ -71,8 +74,8 @@
                                     <td align="center">
                                         <a href="{{ $verificationUrl }}"
                                            class="btn-primary"
-                                           style="display:inline-block;background-color:#1d4f73;color:#ffffff;font-size:15px;font-weight:600;text-decoration:none;padding:14px 36px;border-radius:10px;letter-spacing:0.1px;">
-                                            Verify My Email Address
+                                           style="display:inline-block;background-color:#1b324f;color:#ffffff;font-size:13px;font-weight:600;text-decoration:none;padding:16px 40px;border-radius:4px;letter-spacing:2px;text-transform:uppercase;">
+                                            Verify My Email
                                         </a>
                                     </td>
                                 </tr>
@@ -80,15 +83,15 @@
 
                             <!-- Expiry notice -->
                             <table width="100%" cellpadding="0" cellspacing="0" border="0"
-                                   style="background-color:#eef5f9;border:1px solid #d6e6ef;border-radius:10px;margin-bottom:28px;">
+                                   style="background-color:#eef2f7;border:1px solid #d6dfeb;border-radius:6px;margin-bottom:28px;">
                                 <tr>
                                     <td style="padding:14px 18px;">
                                         <table cellpadding="0" cellspacing="0" border="0">
                                             <tr>
                                                 <td valign="top" style="padding-right:10px;font-size:18px;line-height:1;">⏱</td>
-                                                <td style="font-size:13px;color:#1d4f73;line-height:1.5;">
+                                                <td style="font-size:13px;color:#1b324f;line-height:1.5;">
                                                     This link will expire in <strong>{{ $expiresMinutes }} minutes</strong>.
-                                                    If it expires, simply sign in and request a new one.
+                                                    If it does, just sign in and request a new one.
                                                 </td>
                                             </tr>
                                         </table>
@@ -97,9 +100,9 @@
                             </table>
 
                             <!-- Didn't request notice -->
-                            <p style="margin:0;font-size:13px;color:#a8a29e;line-height:1.6;">
-                                If you didn't create an account with Acme Opticians,
-                                you can safely ignore this email — no account will be activated.
+                            <p style="margin:0;font-size:13px;color:#8c8576;line-height:1.6;">
+                                If you didn't sign up for an account with Acme Estate Agents,
+                                you can safely ignore this email — no account will be created.
                             </p>
 
                         </td>
@@ -109,16 +112,16 @@
                     <tr>
                         <td style="padding:0 48px 36px;">
                             <table width="100%" cellpadding="0" cellspacing="0" border="0"
-                                   style="background-color:#fafaf9;border:1px solid #e7e5e4;border-radius:10px;">
+                                   style="background-color:#f6f1e8;border:1px solid #ece3d1;border-radius:6px;">
                                 <tr>
                                     <td style="padding:16px 20px;">
-                                        <p style="margin:0 0 6px;font-size:12px;font-weight:600;color:#78716c;text-transform:uppercase;letter-spacing:0.6px;">
+                                        <p style="margin:0 0 6px;font-size:11px;font-weight:600;color:#65604f;text-transform:uppercase;letter-spacing:2px;">
                                             Button not working?
                                         </p>
-                                        <p style="margin:0 0 8px;font-size:12px;color:#a8a29e;line-height:1.5;">
+                                        <p style="margin:0 0 8px;font-size:12px;color:#8c8576;line-height:1.5;">
                                             Copy and paste this link into your browser:
                                         </p>
-                                        <p style="margin:0;font-size:11px;color:#1d4f73;word-break:break-all;line-height:1.5;">
+                                        <p style="margin:0;font-size:11px;color:#1b324f;word-break:break-all;line-height:1.5;">
                                             {{ $verificationUrl }}
                                         </p>
                                     </td>
@@ -129,24 +132,23 @@
 
                     <!-- ── Footer ── -->
                     <tr>
-                        <td style="background-color:#1c1917;padding:28px 40px;border-radius:0 0 16px 16px;">
+                        <td style="background-color:#22211d;padding:32px 40px;">
                             <table width="100%" cellpadding="0" cellspacing="0" border="0">
                                 <tr>
                                     <td align="center">
-                                        <p style="margin:0 0 4px;font-size:14px;font-weight:600;color:#ffffff;">
-                                            {{ config('app.fullname') }}
+                                        <p style="margin:0 0 4px;font-size:16px;font-weight:600;color:#ffffff;font-family:Georgia,'Times New Roman',serif;letter-spacing:-0.2px;">
+                                            {{ config('site.fullname') }}
                                         </p>
-                                        <p style="margin:0 0 12px;font-size:12px;color:rgba(255,255,255,0.45);">
+                                        <p style="margin:0 0 14px;font-size:12px;color:rgba(255,255,255,0.45);">
                                             {{ config('site.address') }}
                                         </p>
-                                        <p style="margin:0 0 16px;font-size:11px;color:rgba(255,255,255,0.3);">
-                                            Acme Opticians
+                                        <p style="margin:0 0 18px;font-size:10px;color:rgba(255,255,255,0.3);letter-spacing:3px;text-transform:uppercase;">
+                                            Independent &middot; Local since {{ config('site.established') }}
                                         </p>
-                                        <!-- Separator dots -->
                                         <p style="margin:0;font-size:11px;color:rgba(255,255,255,0.25);">
-                                            <a href="{{ config('app.url') }}" style="color:rgba(255,255,255,0.4);text-decoration:none;">Visit our website</a>
+                                            <a href="{{ config('app.url') }}" style="color:rgba(255,255,255,0.5);text-decoration:none;">Visit the website</a>
                                             &nbsp;&middot;&nbsp;
-                                            <a href="mailto:{{ config('mail.from.address') }}" style="color:rgba(255,255,255,0.4);text-decoration:none;">{{ config('mail.from.address') }}</a>
+                                            <a href="mailto:{{ config('mail.from.address') }}" style="color:rgba(255,255,255,0.5);text-decoration:none;">{{ config('mail.from.address') }}</a>
                                         </p>
                                     </td>
                                 </tr>
@@ -157,10 +159,9 @@
                 </table>
                 <!-- /Email card -->
 
-                <!-- Below-card note -->
-                <p style="margin:20px 0 0;font-size:12px;color:#a8a29e;text-align:center;">
+                <p style="margin:20px 0 0;font-size:12px;color:#8c8576;text-align:center;">
                     You received this email because an account was created at
-                    <a href="{{ config('app.url') }}" style="color:#ec4899;text-decoration:none;">{{ parse_url(config('app.url'), PHP_URL_HOST) }}</a>
+                    <a href="{{ config('app.url') }}" style="color:#1b324f;text-decoration:none;">{{ parse_url(config('app.url'), PHP_URL_HOST) }}</a>
                     using this address.
                 </p>
 

@@ -16,7 +16,7 @@ const props = defineProps({
 
 <template>
     <Head
-        :title="`${page.title} — Acme Opticians`"
+        :title="`${page.title} — Acme Estate Agents`"
         :description="page.description"
     />
 
@@ -29,13 +29,11 @@ const props = defineProps({
             <div class="absolute -top-16 -right-16 w-72 h-72 bg-brand-500/25 rounded-full blur-3xl pointer-events-none"></div>
             <div class="absolute -bottom-20 -left-10 w-64 h-64 bg-brand-800/35 rounded-full blur-3xl pointer-events-none"></div>
             <div class="absolute right-[-40px] top-1/2 w-72 h-72 pointer-events-none select-none flex items-center justify-center"
-                 style="transform: translateY(-50%) rotate(15deg);">
-                <svg class="w-full h-auto opacity-20" viewBox="0 0 400 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M155 80 Q200 65 245 80" stroke="white" stroke-width="10" stroke-linecap="round" fill="none"/>
-                    <path d="M30 70 Q15 75 18 95" stroke="white" stroke-width="10" stroke-linecap="round" fill="none"/>
-                    <path d="M370 70 Q385 75 382 95" stroke="white" stroke-width="10" stroke-linecap="round" fill="none"/>
-                    <ellipse cx="95" cy="85" rx="65" ry="50" stroke="white" stroke-width="10" fill="none"/>
-                    <ellipse cx="305" cy="85" rx="65" ry="50" stroke="white" stroke-width="10" fill="none"/>
+                 style="transform: translateY(-50%) rotate(-8deg);">
+                <svg class="w-full h-auto opacity-20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 55 L50 25 L82 55" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M28 50 L28 78 L72 78 L72 50" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M44 78 L44 60 L56 60 L56 78" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </div>
 

@@ -2,58 +2,81 @@
 import { usePage } from '@inertiajs/vue3';
 
 const page = usePage();
+
+const bullets = [
+    'Senior, named agents — no being passed around',
+    'Honest, evidenced valuations — never inflated to win the instruction',
+    'Professional photography, floor plans &amp; accompanied viewings on every listing',
+    'Listed on Rightmove, Zoopla and OnTheMarket as standard',
+];
 </script>
 
 <template>
-    <section id="about" class="py-20 bg-warm-50">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div>
-                    <span class="text-xs font-semibold uppercase tracking-widest text-brand-500 mb-3 block">About Us</span>
-                    <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-warm-900 mb-6 leading-tight">
-                        Independent eye care<br />you can <span class="text-gradient-brand">trust</span>
-                    </h2>
-                    <p class="text-warm-600 leading-relaxed mb-4">
-                        Acme Opticians has been caring for the eyes of our community for over forty years.
-                        As an independent practice, we have the freedom to take our time with every patient
-                        and recommend only what's right for you — never what a head office tells us to sell.
-                    </p>
-                    <p class="text-warm-600 leading-relaxed mb-8">
-                        Our experienced optometrists use the latest digital retinal imaging and OCT scanning
-                        technology to detect changes in your vision and eye health early. From your first
-                        eye test to fitting the perfect pair of frames, we're with you every step of the way.
-                    </p>
-                    <div class="flex flex-wrap gap-3">
-                        <a href="#services"
-                            class="inline-flex items-center gap-2 px-5 py-2.5 bg-brand-600 text-white text-sm font-semibold rounded-xl hover:bg-brand-700 transition-colors shadow-sm">
-                            Our Services
-                        </a>
-                        <a href="#contact"
-                            class="inline-flex items-center gap-2 px-5 py-2.5 border-2 border-brand-200 text-brand-600 text-sm font-semibold rounded-xl hover:border-brand-400 transition-colors">
-                            Find Us
-                        </a>
+    <section id="about" class="py-20 lg:py-28 bg-white">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+                <!-- Image / visual -->
+                <div class="order-2 lg:order-1">
+                    <div class="relative aspect-[4/5] w-full max-w-md mx-auto overflow-hidden bg-brand-gradient">
+                        <div class="absolute inset-0 opacity-10"
+                             style="background-image: radial-gradient(circle, #ffffff 1px, transparent 1px); background-size: 22px 22px;"></div>
+                        <!-- Period rooftop skyline -->
+                        <svg class="absolute inset-0 w-full h-full" viewBox="0 0 300 400" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+                            <path d="M0 280 L40 240 L80 280 L80 400 L0 400 Z" fill="#0c1827" opacity="0.55"/>
+                            <path d="M80 260 L80 230 L130 180 L180 230 L180 400 L80 400 Z" fill="#0c1827" opacity="0.55"/>
+                            <path d="M180 290 L180 260 L220 220 L260 260 L260 400 L180 400 Z" fill="#0c1827" opacity="0.55"/>
+                            <path d="M260 300 L260 280 L290 250 L320 280 L320 400 L260 400 Z" fill="#0c1827" opacity="0.55"/>
+                            <rect x="15" y="290" width="10" height="14" fill="#06b89a"/>
+                            <rect x="35" y="290" width="10" height="14" fill="#06b89a"/>
+                            <rect x="100" y="280" width="14" height="18" fill="#06b89a"/>
+                            <rect x="130" y="280" width="14" height="18" fill="#06b89a"/>
+                            <rect x="155" y="280" width="14" height="18" fill="#06b89a"/>
+                            <rect x="195" y="290" width="12" height="16" fill="#06b89a"/>
+                            <rect x="225" y="290" width="12" height="16" fill="#06b89a"/>
+                            <rect x="270" y="310" width="10" height="14" fill="#06b89a"/>
+                            <rect x="290" y="310" width="10" height="14" fill="#06b89a"/>
+                        </svg>
+                        <!-- Inset stat card -->
+                        <div class="absolute bottom-6 left-6 bg-white px-5 py-4 shadow-md">
+                            <p class="text-xs text-warm-500 mb-1">Established</p>
+                            <p class="text-2xl font-bold text-brand-900 tracking-display">{{ page.props.site.established }}</p>
+                            <p class="text-xs text-accent-600 font-semibold mt-1">Independent &amp; family-run</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="rounded-2xl p-6 text-white col-span-2" style="background: linear-gradient(135deg, #102e46 0%, #1d4f73 55%, #2a6a93 100%)">
-                        <p class="text-2xl font-display font-bold mb-2">"Genuinely excellent care."</p>
-                        <p class="text-white/80 text-sm leading-relaxed">
-                            "The team took the time to explain every part of the eye test, and helped me
-                            choose frames that actually suit my face. Friendly, thorough and never pushy
-                            — I won't go anywhere else."
-                        </p>
-                        <p class="text-white/60 text-xs mt-3 font-medium">— Sarah B., Google review</p>
-                    </div>
-                    <div class="bg-white rounded-2xl p-5 border border-warm-200 flex flex-col items-start gap-2">
-                        <span class="text-3xl">&#128065;</span>
-                        <p class="text-sm font-semibold text-warm-800">OCT Scanning</p>
-                        <p class="text-xs text-warm-500">Advanced retinal imaging in every test</p>
-                    </div>
-                    <div class="bg-white rounded-2xl p-5 border border-warm-200 flex flex-col items-start gap-2">
-                        <span class="text-3xl">&#127891;</span>
-                        <p class="text-sm font-semibold text-warm-800">GOC-Registered</p>
-                        <p class="text-xs text-warm-500">Qualified optometrists & dispensers</p>
+                <!-- Copy -->
+                <div class="order-1 lg:order-2">
+                    <p class="eyebrow text-accent-600 mb-3">About the office</p>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-900 tracking-display leading-[1.1] mb-6">
+                        The area&rsquo;s longest-established <span class="accent-italic">independent</span> estate agent.
+                    </h2>
+                    <p class="text-warm-600 leading-relaxed mb-5">
+                        Opened on Penwortham high street in {{ page.props.site.established }}, we&rsquo;ve been selling and letting homes across South Ribble and the Ribble Valley ever since. Five local agents, accompanied viewings, and a phone that gets picked up.
+                    </p>
+                    <p class="text-warm-600 leading-relaxed mb-8">
+                        We won&rsquo;t over-value to win the instruction, and the same agent will look after you from valuation to completion.
+                    </p>
+
+                    <ul class="space-y-3 mb-10">
+                        <li v-for="b in bullets" :key="b" class="flex items-start gap-3 text-sm text-brand-800">
+                            <svg class="w-5 h-5 text-accent-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span v-html="b"></span>
+                        </li>
+                    </ul>
+
+                    <div class="flex flex-wrap gap-3">
+                        <a href="#valuation"
+                            class="inline-flex items-center gap-3 px-7 py-3.5 bg-accent-500 text-white text-[12px] tracking-[0.2em] uppercase font-semibold hover:bg-accent-600 transition-colors shadow-sm">
+                            Book a valuation
+                        </a>
+                        <a href="#team"
+                            class="inline-flex items-center gap-2 px-7 py-3.5 text-[12px] tracking-[0.2em] uppercase font-semibold text-brand-900 border border-brand-200 hover:border-brand-900 transition-colors">
+                            Meet the team
+                        </a>
                     </div>
                 </div>
             </div>

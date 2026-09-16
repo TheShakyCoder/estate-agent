@@ -2,7 +2,17 @@
   "permissions": {
     "allow": [
       "Bash(ddev artisan:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "WebFetch(domain:thehiddenhutltd.com)",
+      "Bash(ddev exec *)",
+      "Read(//tmp/**)",
+      "Bash(echo \"---STATUS: $?\")",
+      "Bash(ddev describe *)",
+      "Bash(grep -oE 'data-page=\"[^\"]{0,200}' /tmp/home.html)",
+      "Bash(grep -oE 'site.{0,400}' /tmp/home.html)",
+      "Bash(grep -oE 'site\\\\\\\\u0022[^,]{0,300}' /tmp/home.html)",
+      "Bash(grep -oE 'site&quot;:[^}]{0,300}' /tmp/home.html)",
+      "Bash(grep -oE 'site&quot;:[^}]{0,250}' /tmp/home.html)"
     ]
   }
 }

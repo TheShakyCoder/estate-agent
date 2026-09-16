@@ -5,108 +5,106 @@ defineProps({
 </script>
 
 <template>
-    <section id="contact" class="py-20 bg-warm-50">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-14">
-                <span class="text-xs font-semibold uppercase tracking-widest text-brand-500 mb-3 block">Find Us</span>
-                <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-warm-900">Come and say <span class="text-gradient-brand">hello</span></h2>
-                <p class="text-warm-500 mt-4 max-w-xl mx-auto">Pop in for a browse, call ahead to book your eye test, or send us a message. We'd love to see you!</p>
-            </div>
+    <section id="contact" class="py-20 lg:py-28 bg-cream-100 border-t border-warm-100">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 
-            <div class="grid lg:grid-cols-2 gap-12">
-                <!-- Contact info -->
-                <div class="space-y-6">
-                    <div class="flex items-start gap-4 p-5 bg-white rounded-2xl border border-warm-200">
-                        <div class="w-10 h-10 bg-brand-100 rounded-xl flex items-center justify-center text-lg shrink-0">&#128205;</div>
-                        <div>
-                            <p class="font-semibold text-warm-900 text-sm">Address</p>
-                            <p class="text-warm-500 text-sm mt-0.5" v-html="site.fullname + '<br>' + site.address"></p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4 p-5 bg-white rounded-2xl border border-warm-200">
-                        <div class="w-10 h-10 bg-brand-100 rounded-xl flex items-center justify-center text-lg shrink-0">&#128222;</div>
-                        <div>
-                            <p class="font-semibold text-warm-900 text-sm">Phone</p>
-                            <p class="text-warm-500 text-sm mt-0.5">{{ site.telephone }}</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4 p-5 bg-white rounded-2xl border border-warm-200">
-                        <div class="w-10 h-10 bg-brand-100 rounded-xl flex items-center justify-center text-lg shrink-0">&#9993;&#65039;</div>
-                        <div>
-                            <p class="font-semibold text-warm-900 text-sm">Email</p>
-                            <p class="text-warm-500 text-sm mt-0.5">{{ site.email }}</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4 p-5 bg-white rounded-2xl border border-warm-200">
-                        <div class="w-10 h-10 bg-brand-100 rounded-xl flex items-center justify-center text-lg shrink-0">&#128336;</div>
-                        <div>
-                            <p class="font-semibold text-warm-900 text-sm">Opening Hours</p>
-                            <p class="text-warm-500 text-sm mt-0.5" v-html="site.opening_times"></p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4 p-5 bg-white rounded-2xl border border-warm-200">
-                        <div class="w-10 h-10 bg-brand-100 rounded-xl flex items-center justify-center text-lg shrink-0">
-                            <svg class="w-5 h-5 text-brand-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-warm-900 text-sm">Follow Us</p>
-                            <div class="flex gap-3 mt-2">
-                                <a :href="site.social?.instagram" target="_blank" rel="noopener"
-                                   class="text-sm font-semibold text-brand-500 hover:text-brand-700 transition-colors">
-                                    Instagram
-                                </a>
-                                <a :href="site.social?.facebook" target="_blank" rel="noopener"
-                                   class="text-sm font-semibold text-[#1877F2] hover:text-blue-700 transition-colors">
-                                    Facebook
-                                </a>
-                                <a :href="site.social?.tiktok" target="_blank" rel="noopener"
-                                   class="text-sm font-semibold text-warm-700 hover:text-warm-900 transition-colors">
-                                    TikTok
-                                </a>
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+                <!-- Left: copy + details -->
+                <div>
+                    <p class="eyebrow text-accent-600 mb-3">Visit us</p>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-900 tracking-display leading-[1.1] mb-6">
+                        Pop in for a <span class="accent-italic">chat</span>.
+                    </h2>
+                    <p class="text-warm-600 leading-relaxed mb-10 max-w-md">
+                        The office is on Penwortham high street, just off the Liverpool Road. Pop in to talk through a sale or a let, browse the window, or book a valuation &mdash; kettle&rsquo;s always on.
+                    </p>
+
+                    <dl class="space-y-6 max-w-md">
+                        <div class="flex items-start gap-5 pb-6 border-b border-warm-200">
+                            <svg class="w-5 h-5 text-accent-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <div>
+                                <dt class="eyebrow text-warm-400 mb-1">The office</dt>
+                                <dd class="text-brand-900 leading-relaxed" v-html="site.address"></dd>
                             </div>
                         </div>
-                    </div>
+                        <div class="flex items-start gap-5 pb-6 border-b border-warm-200">
+                            <svg class="w-5 h-5 text-accent-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                            </svg>
+                            <div>
+                                <dt class="eyebrow text-warm-400 mb-1">Telephone</dt>
+                                <dd><a :href="'tel:' + site.telephone" class="text-brand-900 hover:text-accent-600 transition-colors">{{ site.telephone }}</a></dd>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-5 pb-6 border-b border-warm-200">
+                            <svg class="w-5 h-5 text-accent-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l9 6 9-6M3 8v10a2 2 0 002 2h14a2 2 0 002-2V8M3 8l2-2h14l2 2"/>
+                            </svg>
+                            <div>
+                                <dt class="eyebrow text-warm-400 mb-1">Email</dt>
+                                <dd><a :href="'mailto:' + site.email" class="text-brand-900 hover:text-accent-600 transition-colors">{{ site.email }}</a></dd>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-5">
+                            <svg class="w-5 h-5 text-accent-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <div>
+                                <dt class="eyebrow text-warm-400 mb-1">Opening hours</dt>
+                                <dd class="text-brand-900 leading-relaxed" v-html="site.opening_times"></dd>
+                            </div>
+                        </div>
+                    </dl>
                 </div>
 
-                <!-- Contact form -->
-                <form class="bg-white rounded-2xl border border-warm-200 p-7 space-y-5 shadow-sm">
+                <!-- Right: contact form -->
+                <form class="bg-white border border-warm-200 p-8 sm:p-10 space-y-6">
+                    <div>
+                        <p class="text-xl font-bold text-brand-900 tracking-display">Send us a message</p>
+                        <p class="text-sm text-warm-500 mt-1">We reply within one working day.</p>
+                    </div>
+
                     <div class="grid sm:grid-cols-2 gap-5">
                         <div>
-                            <label class="block text-xs font-semibold text-warm-700 mb-1.5">First name</label>
-                            <input type="text" placeholder="Jane"
-                                class="w-full px-4 py-2.5 text-sm border border-warm-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent transition" />
+                            <label class="eyebrow text-warm-500 mb-2 block">First name</label>
+                            <input type="text" placeholder="Eleanor"
+                                class="w-full px-4 py-3 text-sm bg-white border border-warm-200 focus:outline-none focus:border-accent-400 text-brand-900 transition" />
                         </div>
                         <div>
-                            <label class="block text-xs font-semibold text-warm-700 mb-1.5">Last name</label>
-                            <input type="text" placeholder="Smith"
-                                class="w-full px-4 py-2.5 text-sm border border-warm-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent transition" />
+                            <label class="eyebrow text-warm-500 mb-2 block">Last name</label>
+                            <input type="text" placeholder="Marsh"
+                                class="w-full px-4 py-3 text-sm bg-white border border-warm-200 focus:outline-none focus:border-accent-400 text-brand-900 transition" />
                         </div>
                     </div>
                     <div>
-                        <label class="block text-xs font-semibold text-warm-700 mb-1.5">Email</label>
-                        <input type="email" placeholder="jane@example.com"
-                            class="w-full px-4 py-2.5 text-sm border border-warm-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent transition" />
+                        <label class="eyebrow text-warm-500 mb-2 block">Email</label>
+                        <input type="email" placeholder="you@example.com"
+                            class="w-full px-4 py-3 text-sm bg-white border border-warm-200 focus:outline-none focus:border-accent-400 text-brand-900 transition" />
                     </div>
                     <div>
-                        <label class="block text-xs font-semibold text-warm-700 mb-1.5">What's it about?</label>
+                        <label class="eyebrow text-warm-500 mb-2 block">What can we help with?</label>
                         <select
-                            class="w-full px-4 py-2.5 text-sm border border-warm-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent transition text-warm-600">
-                            <option>Book an eye test</option>
-                            <option>Contact lens enquiry</option>
-                            <option>Frame &amp; lens advice</option>
-                            <option>Children's eye care</option>
-                            <option>Dry eye clinic</option>
-                            <option>General enquiry</option>
+                            class="w-full px-4 py-3 text-sm bg-white border border-warm-200 focus:outline-none focus:border-accent-400 text-brand-900 transition">
+                            <option>Free valuation</option>
+                            <option>Selling my home</option>
+                            <option>Looking to buy</option>
+                            <option>Renting / lettings</option>
+                            <option>Commercial &amp; land</option>
+                            <option>Just saying hello</option>
                         </select>
                     </div>
                     <div>
-                        <label class="block text-xs font-semibold text-warm-700 mb-1.5">Message</label>
-                        <textarea rows="4" placeholder="Tell us what you're looking for..."
-                            class="w-full px-4 py-2.5 text-sm border border-warm-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand-400 focus:border-transparent transition resize-none"></textarea>
+                        <label class="eyebrow text-warm-500 mb-2 block">Message</label>
+                        <textarea rows="5" placeholder="Tell us about your property, your timescale, and anything else we should know…"
+                            class="w-full px-4 py-3 text-sm bg-white border border-warm-200 focus:outline-none focus:border-accent-400 text-brand-900 transition resize-none"></textarea>
                     </div>
                     <button type="submit"
-                        class="w-full py-3.5 text-white font-bold rounded-xl hover:opacity-90 transition-all text-sm shadow-lg" style="background: linear-gradient(135deg, #102e46, #2a6a93)">
-                        Send Message
+                        class="w-full py-4 bg-accent-500 text-white text-[12px] tracking-[0.2em] uppercase font-semibold hover:bg-accent-600 transition-colors shadow-sm">
+                        Send message
                     </button>
                 </form>
             </div>

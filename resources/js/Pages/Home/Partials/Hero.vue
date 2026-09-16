@@ -1,131 +1,213 @@
 <script setup>
+import { ref } from 'vue';
+
 defineProps({
     site: { type: Object },
 });
+
+const mode = ref('buy'); // 'buy' | 'rent'
+
+const featured = {
+    price: '£325,000',
+    address: '14 Liverpool Road',
+    area: 'Penwortham, Preston',
+    beds: 4, baths: 2, recep: 2,
+    tag: 'Just listed',
+    blurb: 'A handsome four-bed semi on a sought-after Penwortham street — freshly redecorated, with a sunny south-facing garden and off-road parking for two.',
+};
 </script>
 
 <template>
-    <section id="home" class="relative overflow-hidden min-h-[90vh] flex items-center"
-        style="background: linear-gradient(160deg, #0a1f30 0%, #153d5c 45%, #2a6a93 100%);">
+    <section id="home" class="relative bg-white">
 
-        <!-- ── Background blobs & glow ── -->
-        <div class="absolute inset-0 overflow-hidden pointer-events-none">
-            <div class="absolute -top-32 -right-32 w-[500px] h-[500px] bg-white/5 hero-blob"></div>
-            <div class="absolute -bottom-40 -left-20 w-[400px] h-[400px] rounded-full bg-accent-400/10 blur-3xl"></div>
-            <div class="absolute top-1/3 left-1/3 w-[300px] h-[300px] rounded-full bg-lens-teal/10 blur-3xl"></div>
-            <!-- Subtle grid -->
-            <div class="absolute inset-0 opacity-[0.04]"
-                 style="background-image: radial-gradient(circle, white 1px, transparent 1px); background-size: 40px 40px;"></div>
-        </div>
+        <!-- HOUSE OF THE DAY -->
+        <div class="bg-white">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-12 pb-12 lg:pt-16 lg:pb-16">
 
-        <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 lg:py-28 w-full">
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-
-                <!-- ── Left: Copy ── -->
-                <div class="text-white">
-                    <span class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-5 py-2 rounded-full text-sm font-semibold text-white mb-8 border border-white/20 shadow-lg shadow-black/5">
-                        <span class="relative flex h-2.5 w-2.5">
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-300 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-accent-300"></span>
-                        </span>
-                        Independent Opticians since {{ site.established }}
-                    </span>
-
-                    <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.05] mb-8 tracking-tight">
-                        See the world
-                        <span class="relative inline-block">
-                            <span class="relative z-10">clearly</span>
-                            <span class="absolute -bottom-1 left-0 right-0 h-4 bg-accent-400/40 rounded-full -skew-x-3 z-0"></span>
-                        </span>
-                        <br />with <span class="text-accent-300 drop-shadow-lg">Acme</span>
-                    </h1>
-
-                    <p class="text-lg sm:text-xl text-white/85 leading-relaxed mb-10 max-w-xl font-medium">
-                        Comprehensive eye examinations, designer frames, and expert contact lens fittings —
-                        delivered by a family-run team who put your vision first.
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-3">
+                    <div>
+                        <p class="eyebrow text-accent-600 mb-3">House of the day</p>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-brand-900 tracking-display leading-[1.1]">
+                            Today&rsquo;s pick from <span class="accent-italic">the window</span>.
+                        </h2>
+                    </div>
+                    <p class="text-xs text-warm-400 sm:text-right">
+                        Updated <time>today</time> &middot; <span class="text-warm-500">Hand-picked by the team</span>
                     </p>
-
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#contact"
-                            class="group inline-flex items-center gap-2 px-8 py-4 bg-accent-400 text-brand-900 font-bold rounded-2xl hover:bg-accent-300 transition-all duration-200 shadow-xl shadow-black/20 text-sm">
-                            Book an Eye Test
-                            <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
-                                    d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                        </a>
-                        <a href="#services"
-                            class="inline-flex items-center gap-2 px-8 py-4 bg-white/10 backdrop-blur-md text-white font-bold rounded-2xl hover:bg-white/20 transition-all duration-200 border border-white/25 text-sm">
-                            Our Services
-                        </a>
-                    </div>
-
-                    <!-- Social proof -->
-                    <div class="flex items-center gap-6 mt-12 pt-8 border-t border-white/15">
-                        <div>
-                            <p class="font-display text-2xl font-extrabold text-accent-300">40+</p>
-                            <p class="text-xs text-white/60 font-medium">Years of expertise</p>
-                        </div>
-                        <div class="w-px h-10 bg-white/20"></div>
-                        <div>
-                            <p class="font-display text-2xl font-extrabold text-accent-300">5 ⭐</p>
-                            <p class="text-xs text-white/60 font-medium">Google rating</p>
-                        </div>
-                        <div class="w-px h-10 bg-white/20"></div>
-                        <div>
-                            <p class="font-display text-2xl font-extrabold text-accent-300">200+</p>
-                            <p class="text-xs text-white/60 font-medium">Frames in store</p>
-                        </div>
-                    </div>
                 </div>
 
-                <!-- ── Right: Glasses illustration ── -->
-                <div class="hidden lg:flex items-center justify-center relative">
-                    <div class="absolute w-[420px] h-[420px] rounded-full bg-white/5 blur-2xl animate-scale-pulse"></div>
+                <article class="grid lg:grid-cols-12 bg-brand-900 text-white overflow-hidden shadow-lg">
 
-                    <div class="relative w-[460px] h-[460px]">
-                        <!-- Central glasses SVG -->
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <svg class="w-[360px] h-auto drop-shadow-2xl animate-float" viewBox="0 0 400 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <!-- Bridge -->
-                                <path d="M155 80 Q200 65 245 80" stroke="#e3a72b" stroke-width="6" stroke-linecap="round" fill="none"/>
-                                <!-- Temples -->
-                                <path d="M30 70 Q15 75 18 95" stroke="#e3a72b" stroke-width="6" stroke-linecap="round" fill="none"/>
-                                <path d="M370 70 Q385 75 382 95" stroke="#e3a72b" stroke-width="6" stroke-linecap="round" fill="none"/>
-                                <!-- Left lens -->
-                                <ellipse cx="95" cy="85" rx="65" ry="50" stroke="#e3a72b" stroke-width="6" fill="rgba(255,255,255,0.08)"/>
-                                <!-- Right lens -->
-                                <ellipse cx="305" cy="85" rx="65" ry="50" stroke="#e3a72b" stroke-width="6" fill="rgba(255,255,255,0.08)"/>
-                                <!-- Highlights -->
-                                <ellipse cx="75" cy="65" rx="14" ry="9" fill="rgba(255,255,255,0.5)"/>
-                                <ellipse cx="285" cy="65" rx="14" ry="9" fill="rgba(255,255,255,0.5)"/>
+                    <!-- Visual / photo -->
+                    <div class="lg:col-span-7 relative aspect-[4/3] lg:aspect-auto lg:min-h-[460px] overflow-hidden">
+
+                        <img src="/images/hero-house.jpg" alt="Exterior of today's featured property"
+                             class="absolute inset-0 w-full h-full object-cover" />
+
+                        <!-- Gradient scrim for tag/chip legibility -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20"></div>
+
+                        <!-- Tags -->
+                        <span class="absolute top-5 left-5 px-3 py-1.5 bg-accent-500 text-white text-[10px] tracking-[0.25em] uppercase font-semibold shadow-sm">
+                            House of the day
+                        </span>
+                        <span class="absolute top-5 right-5 px-3 py-1.5 bg-white text-brand-900 text-[10px] tracking-[0.25em] uppercase font-semibold">
+                            {{ featured.tag }}
+                        </span>
+
+                        <!-- Photo count chip (decorative) -->
+                        <span class="absolute bottom-5 left-5 flex items-center gap-1.5 px-2.5 py-1 bg-black/40 text-white text-[10px] tracking-[0.2em] uppercase font-semibold backdrop-blur-sm">
+                            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/>
                             </svg>
+                            24 photos
+                        </span>
+                    </div>
+
+                    <!-- Copy / details -->
+                    <div class="lg:col-span-5 p-8 sm:p-10 lg:p-12 flex flex-col">
+                        <p class="text-4xl sm:text-5xl font-bold tracking-display leading-none">
+                            <span class="accent-italic !text-accent-300 !font-bold">{{ featured.price }}</span>
+                        </p>
+                        <p class="mt-4 text-xl font-semibold text-white tracking-display">{{ featured.address }}</p>
+                        <p class="text-sm text-white/60 mt-1">{{ featured.area }}</p>
+
+                        <!-- Icons row -->
+                        <div class="mt-6 pt-6 border-t border-white/10 flex items-center gap-6 text-sm text-white/80">
+                            <span class="flex items-center gap-2" :title="`${featured.beds} bedrooms`">
+                                <svg class="w-5 h-5 text-accent-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12V8a2 2 0 012-2h14a2 2 0 012 2v4M3 12v6a1 1 0 001 1h1a1 1 0 001-1v-2h12v2a1 1 0 001 1h1a1 1 0 001-1v-6M3 12h18M7 12V9h4v3"/>
+                                </svg>
+                                {{ featured.beds }} beds
+                            </span>
+                            <span class="flex items-center gap-2" :title="`${featured.baths} bathrooms`">
+                                <svg class="w-5 h-5 text-accent-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 14h16M5 14v3a3 3 0 003 3h8a3 3 0 003-3v-3M7 14V7a2 2 0 012-2h1a2 2 0 012 2v1"/>
+                                </svg>
+                                {{ featured.baths }} baths
+                            </span>
+                            <span class="flex items-center gap-2" :title="`${featured.recep} reception rooms`">
+                                <svg class="w-5 h-5 text-accent-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 18v-7a2 2 0 012-2h12a2 2 0 012 2v7M4 18h16M7 18v-3h10v3"/>
+                                </svg>
+                                {{ featured.recep }} recep
+                            </span>
                         </div>
 
-                        <!-- Floating accent dots -->
-                        <div class="absolute top-[15%] right-[20%] w-5 h-5 rounded-full bg-accent-300 animate-scale-pulse shadow-lg shadow-accent-300/50"></div>
-                        <div class="absolute bottom-[20%] left-[15%] w-4 h-4 rounded-full bg-lens-teal animate-float shadow-lg shadow-lens-teal/50"></div>
-                        <div class="absolute top-[65%] right-[5%] w-3 h-3 rounded-full bg-lens-sky animate-wiggle shadow-lg shadow-lens-sky/50"></div>
-                        <div class="absolute top-[5%] left-[40%] w-4 h-4 rounded-full bg-accent-400 animate-float-delayed shadow-lg shadow-accent-400/50"></div>
+                        <p class="mt-6 text-white/70 leading-relaxed text-[15px] flex-1">
+                            {{ featured.blurb }}
+                        </p>
 
-                        <!-- Small label cards -->
-                        <div class="absolute top-[8%] right-[2%] bg-white/95 backdrop-blur rounded-xl px-3 py-2 shadow-xl text-xs font-semibold text-brand-700 animate-float-delayed">
-                            <span class="text-accent-500">✓</span> NHS Tests
-                        </div>
-                        <div class="absolute bottom-[8%] left-[2%] bg-white/95 backdrop-blur rounded-xl px-3 py-2 shadow-xl text-xs font-semibold text-brand-700 animate-float-slow">
-                            <span class="text-accent-500">✓</span> Designer Frames
+                        <div class="mt-8 flex flex-col sm:flex-row gap-3">
+                            <a href="#"
+                                class="inline-flex items-center justify-center gap-3 px-7 py-3.5 bg-accent-500 text-white text-[12px] tracking-[0.2em] uppercase font-semibold hover:bg-accent-600 transition-colors shadow-sm">
+                                View this home
+                                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </a>
+                            <a href="#contact"
+                                class="inline-flex items-center justify-center gap-2 px-7 py-3.5 text-[12px] tracking-[0.2em] uppercase font-semibold text-white border border-white/30 hover:border-white hover:bg-white/5 transition-colors">
+                                Book a viewing
+                            </a>
                         </div>
                     </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- Search band -->
+        <div class="relative bg-cream-100 border-y border-warm-100">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+
+                <p class="eyebrow text-accent-600 mb-5">Independent · Penwortham · Since {{ site.established }}</p>
+
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-900 leading-[1.05] tracking-display mb-10 max-w-3xl">
+                    Find a home you&rsquo;ll <span class="accent-italic">love</span> in South Ribble &amp; the Ribble Valley.
+                </h1>
+
+                <!-- Search panel -->
+                <div class="bg-white border border-warm-200 shadow-sm">
+
+                    <!-- Buy/Rent toggle -->
+                    <div class="flex border-b border-warm-200">
+                        <button type="button" @click="mode = 'buy'"
+                            class="flex-1 sm:flex-none px-8 py-4 text-[12px] tracking-[0.2em] uppercase font-semibold transition-colors"
+                            :class="mode === 'buy'
+                                ? 'bg-white text-brand-900 border-b-2 border-accent-500 -mb-px'
+                                : 'text-warm-500 hover:text-brand-900'">
+                            Buy
+                        </button>
+                        <button type="button" @click="mode = 'rent'"
+                            class="flex-1 sm:flex-none px-8 py-4 text-[12px] tracking-[0.2em] uppercase font-semibold transition-colors"
+                            :class="mode === 'rent'
+                                ? 'bg-white text-brand-900 border-b-2 border-accent-500 -mb-px'
+                                : 'text-warm-500 hover:text-brand-900'">
+                            Rent
+                        </button>
+                    </div>
+
+                    <!-- Search fields -->
+                    <form class="grid grid-cols-1 md:grid-cols-12 gap-px bg-warm-100" @submit.prevent>
+                        <label class="md:col-span-5 bg-white px-5 py-4 cursor-text block">
+                            <span class="eyebrow text-warm-400 block mb-1.5">Location</span>
+                            <input type="text" placeholder="Town, postcode or area"
+                                class="w-full bg-transparent border-0 p-0 text-sm text-brand-900 placeholder:text-warm-400 focus:outline-none focus:ring-0" />
+                        </label>
+                        <label class="md:col-span-3 bg-white px-5 py-4 block">
+                            <span class="eyebrow text-warm-400 block mb-1.5">Min price</span>
+                            <select class="w-full bg-transparent border-0 p-0 text-sm text-brand-900 focus:outline-none focus:ring-0 appearance-none">
+                                <option>No min</option>
+                                <option>&pound;100,000</option>
+                                <option>&pound;150,000</option>
+                                <option>&pound;200,000</option>
+                                <option>&pound;300,000</option>
+                                <option>&pound;500,000</option>
+                            </select>
+                        </label>
+                        <label class="md:col-span-2 bg-white px-5 py-4 block">
+                            <span class="eyebrow text-warm-400 block mb-1.5">Beds</span>
+                            <select class="w-full bg-transparent border-0 p-0 text-sm text-brand-900 focus:outline-none focus:ring-0 appearance-none">
+                                <option>Any</option>
+                                <option>1+</option>
+                                <option>2+</option>
+                                <option>3+</option>
+                                <option>4+</option>
+                                <option>5+</option>
+                            </select>
+                        </label>
+                        <button type="submit"
+                            class="md:col-span-2 bg-accent-500 text-white text-[12px] tracking-[0.2em] uppercase font-semibold px-6 py-5 hover:bg-accent-600 transition-colors flex items-center justify-center gap-2">
+                            Search
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Quick links under search -->
+                <div class="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-warm-500">
+                    <a href="#valuation" class="hover:text-accent-600 transition-colors">Book a free valuation</a>
+                    <span class="text-warm-200" aria-hidden="true">·</span>
+                    <a href="#properties" class="hover:text-accent-600 transition-colors">View all properties</a>
+                    <span class="text-warm-200" aria-hidden="true">·</span>
+                    <a href="#contact" class="hover:text-accent-600 transition-colors">Talk to the team</a>
                 </div>
             </div>
         </div>
 
-        <!-- Wave divider -->
-        <div class="absolute bottom-0 left-0 right-0">
-            <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full" preserveAspectRatio="none">
-                <path d="M0 80L48 68C96 56 192 32 288 24C384 16 480 24 576 32C672 40 768 48 864 48C960 48 1056 40 1152 32C1248 24 1344 16 1392 12L1440 8V80H1392C1344 80 1248 80 1152 80C1056 80 960 80 864 80C768 80 672 80 576 80C480 80 384 80 288 80C192 80 96 80 48 80H0Z"
-                    fill="white"/>
-            </svg>
+        <!-- Tagline statement -->
+        <div class="bg-white">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20 lg:py-24 text-center">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-900 leading-[1.1] tracking-display max-w-4xl mx-auto">
+                    Matching <span class="accent-italic">people</span> and <span class="accent-italic">property</span> for over <span class="accent-italic">{{ 2026 - parseInt(site.established) }}</span> years.
+                </h2>
+                <p class="mt-6 text-warm-500 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+                    Proud to be the area&rsquo;s longest-established independent estate agent. We&rsquo;ll do everything we can to help find you a property you can call home.
+                </p>
+            </div>
         </div>
     </section>
 </template>

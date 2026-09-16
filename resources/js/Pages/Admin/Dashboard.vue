@@ -134,17 +134,15 @@ function formatDate(iso) {
                 <!-- Branding card -->
                 <div class="bg-gradient-to-br from-brand-500 to-brand-600 rounded-2xl p-5 text-white">
                     <div class="flex items-center gap-3 mb-4">
-                        <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
-                            <svg class="w-8 h-auto" viewBox="0 0 400 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M155 80 Q200 65 245 80" stroke="#e3a72b" stroke-width="14" stroke-linecap="round" fill="none"/>
-                                <path d="M30 70 Q15 75 18 95" stroke="#e3a72b" stroke-width="14" stroke-linecap="round" fill="none"/>
-                                <path d="M370 70 Q385 75 382 95" stroke="#e3a72b" stroke-width="14" stroke-linecap="round" fill="none"/>
-                                <ellipse cx="95" cy="85" rx="65" ry="50" stroke="#e3a72b" stroke-width="14" fill="none"/>
-                                <ellipse cx="305" cy="85" rx="65" ry="50" stroke="#e3a72b" stroke-width="14" fill="none"/>
+                        <div class="w-12 h-12 rounded-md bg-white/10 flex items-center justify-center">
+                            <svg class="w-7 h-auto" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 55 L50 25 L82 55" stroke="#fbf9f5" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M28 50 L28 78 L72 78 L72 50" stroke="#fbf9f5" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M44 78 L44 60 L56 60 L56 78" stroke="#c2953d" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                         <div>
-                            <p class="font-semibold text-sm font-display leading-tight">Acme Opticians</p>
+                            <p class="font-semibold text-base font-display leading-tight tracking-display">Acme Estate Agents</p>
                         </div>
                     </div>
                     <p class="text-white/70 text-xs leading-relaxed">

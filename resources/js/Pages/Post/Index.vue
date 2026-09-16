@@ -29,7 +29,7 @@ function tagColour(index) {
 </script>
 
 <template>
-    <Head title="News &amp; Updates — Acme Opticians" />
+    <Head title="News — Acme Estate Agents" />
 
     <div class="font-sans antialiased text-warm-800 bg-white">
 
@@ -43,13 +43,11 @@ function tagColour(index) {
 
             <!-- Faint background logo -->
             <div class="absolute right-[-40px] top-1/2 w-72 h-72 pointer-events-none select-none flex items-center justify-center"
-                 style="transform: translateY(-50%) rotate(15deg);">
-                <svg class="w-full h-auto opacity-20" viewBox="0 0 400 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M155 80 Q200 65 245 80" stroke="white" stroke-width="10" stroke-linecap="round" fill="none"/>
-                    <path d="M30 70 Q15 75 18 95" stroke="white" stroke-width="10" stroke-linecap="round" fill="none"/>
-                    <path d="M370 70 Q385 75 382 95" stroke="white" stroke-width="10" stroke-linecap="round" fill="none"/>
-                    <ellipse cx="95" cy="85" rx="65" ry="50" stroke="white" stroke-width="10" fill="none"/>
-                    <ellipse cx="305" cy="85" rx="65" ry="50" stroke="white" stroke-width="10" fill="none"/>
+                 style="transform: translateY(-50%) rotate(-8deg);">
+                <svg class="w-full h-auto opacity-20" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 55 L50 25 L82 55" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M28 50 L28 78 L72 78 L72 50" stroke="white" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M44 78 L44 60 L56 60 L56 78" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </div>
 
@@ -60,14 +58,15 @@ function tagColour(index) {
                     <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                     </svg>
-                    <span class="text-white/80">News &amp; Updates</span>
+                    <span class="text-white/80">Journal</span>
                 </nav>
 
-                <h1 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-4">
-                    News &amp; Updates
+                <p class="eyebrow text-accent-200 mb-4">News &amp; Updates</p>
+                <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight mb-4 tracking-display">
+                    Notes from the office
                 </h1>
                 <p class="text-white/75 text-lg max-w-xl leading-relaxed">
-                    The latest stories, eye care advice and announcements from Acme Opticians.
+                    Local market briefings, area guides, selling and letting advice — the practical updates we share with clients across South Ribble.
                 </p>
             </div>
 

@@ -44,24 +44,24 @@ const indexLinks = computed(() => {
 });
 
 const stats = [
-    { label: 'Upcoming Events', value: '4', icon: '📅', change: '+2 this week', trend: 'up', color: 'bg-brand-50 border-brand-200', iconBg: 'bg-brand-100', valueColor: 'text-brand-700' },
-    { label: 'Active Members', value: '1,248', icon: '👥', change: '+12 this month', trend: 'up', color: 'bg-sky-50 border-sky-200', iconBg: 'bg-sky-100', valueColor: 'text-sky-700' },
-    { label: 'News Articles', value: '18', icon: '📰', change: '3 drafts pending', trend: 'neutral', color: 'bg-purple-50 border-purple-200', iconBg: 'bg-purple-100', valueColor: 'text-purple-700' },
-    { label: 'Volunteers', value: '152', icon: '🤝', change: '+5 new sign-ups', trend: 'up', color: 'bg-accent-50 border-orange-200', iconBg: 'bg-orange-100', valueColor: 'text-orange-700' },
+    { label: 'Live Listings', value: '42', icon: '🏠', change: '+3 this week', trend: 'up', color: 'bg-brand-50 border-brand-200', iconBg: 'bg-brand-100', valueColor: 'text-brand-700' },
+    { label: 'Registered Applicants', value: '1,248', icon: '👥', change: '+12 this month', trend: 'up', color: 'bg-sky-50 border-sky-200', iconBg: 'bg-sky-100', valueColor: 'text-sky-700' },
+    { label: 'Viewings This Week', value: '37', icon: '🔑', change: '8 booked today', trend: 'up', color: 'bg-purple-50 border-purple-200', iconBg: 'bg-purple-100', valueColor: 'text-purple-700' },
+    { label: 'Valuations Booked', value: '11', icon: '📐', change: '+4 new requests', trend: 'up', color: 'bg-accent-50 border-orange-200', iconBg: 'bg-orange-100', valueColor: 'text-orange-700' },
 ];
 
 const recentActivity = [
-    { action: 'New member registered', detail: 'Sarah Thompson joined the community', time: '2 mins ago', icon: '👤', color: 'bg-brand-100 text-brand-700' },
-    { action: 'Event created', detail: '"Spring Community Fair" added for 12 Apr', time: '1 hour ago', icon: '📅', color: 'bg-sky-100 text-sky-700' },
-    { action: 'News article published', detail: 'Sensory garden opening published', time: '3 hours ago', icon: '📰', color: 'bg-purple-100 text-purple-700' },
-    { action: 'Donation received', detail: '£50 received via online form', time: 'Yesterday', icon: '💚', color: 'bg-green-100 text-green-700' },
-    { action: 'Venue hire booking', detail: 'Main hall booked for 19 Apr', time: 'Yesterday', icon: '🏛️', color: 'bg-amber-100 text-amber-700' },
+    { action: 'Offer received', detail: '£245,000 on 14 Liverpool Road, Penwortham', time: '2 mins ago', icon: '💷', color: 'bg-brand-100 text-brand-700' },
+    { action: 'New instruction', detail: '4-bed semi added — Hutton, photos Tuesday', time: '1 hour ago', icon: '🏠', color: 'bg-sky-100 text-sky-700' },
+    { action: 'Listing went live', detail: 'Cob Castle Lane published to Rightmove &amp; Zoopla', time: '3 hours ago', icon: '📣', color: 'bg-purple-100 text-purple-700' },
+    { action: 'Tenancy completed', detail: 'Move-in signed at 7 Howick Park Avenue', time: 'Yesterday', icon: '✅', color: 'bg-green-100 text-green-700' },
+    { action: 'Valuation booked', detail: 'Saturday 10:00 — Longton, 3-bed detached', time: 'Yesterday', icon: '📐', color: 'bg-amber-100 text-amber-700' },
 ];
 
 </script>
 
 <template>
-    <Head title="Dashboard — Acme Opticians Admin" />
+    <Head title="Dashboard — Acme Estate Agents Office" />
 
     <AuthenticatedLayout title="Internal Dashboard">
         <template #header>
@@ -135,38 +135,36 @@ const recentActivity = [
             <!-- Right column -->
             <div class="space-y-5">
 
-                <!-- Charity info card -->
+                <!-- Branding card -->
                 <div class="bg-gradient-to-br from-brand-500 to-brand-600 rounded-2xl p-5 text-white">
                     <div class="flex items-center gap-3 mb-4">
-                        <div class="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
-                            <svg class="w-8 h-auto" viewBox="0 0 400 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M155 80 Q200 65 245 80" stroke="#e3a72b" stroke-width="14" stroke-linecap="round" fill="none"/>
-                                <path d="M30 70 Q15 75 18 95" stroke="#e3a72b" stroke-width="14" stroke-linecap="round" fill="none"/>
-                                <path d="M370 70 Q385 75 382 95" stroke="#e3a72b" stroke-width="14" stroke-linecap="round" fill="none"/>
-                                <ellipse cx="95" cy="85" rx="65" ry="50" stroke="#e3a72b" stroke-width="14" fill="none"/>
-                                <ellipse cx="305" cy="85" rx="65" ry="50" stroke="#e3a72b" stroke-width="14" fill="none"/>
+                        <div class="w-12 h-12 rounded-md bg-white/10 flex items-center justify-center">
+                            <svg class="w-7 h-auto" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 55 L50 25 L82 55" stroke="#fbf9f5" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M28 50 L28 78 L72 78 L72 50" stroke="#fbf9f5" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M44 78 L44 60 L56 60 L56 78" stroke="#c2953d" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </div>
                         <div>
-                            <p class="font-semibold text-sm font-display">Acme Opticians</p>
+                            <p class="font-semibold text-base font-display tracking-display">Acme Estate Agents</p>
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-3 text-center">
                         <div class="bg-white/15 rounded-xl p-3">
-                            <p class="text-lg font-bold font-display">1,248</p>
-                            <p class="text-white/70 text-xs">Members</p>
+                            <p class="text-lg font-bold font-display">42</p>
+                            <p class="text-white/70 text-xs">Live listings</p>
                         </div>
                         <div class="bg-white/15 rounded-xl p-3">
-                            <p class="text-lg font-bold font-display">152</p>
-                            <p class="text-white/70 text-xs">Volunteers</p>
+                            <p class="text-lg font-bold font-display">1,248</p>
+                            <p class="text-white/70 text-xs">Applicants</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Upcoming events mini list -->
+                <!-- Upcoming viewings mini list -->
                 <div class="bg-white rounded-2xl border border-warm-200 shadow-sm overflow-hidden">
                     <div class="px-5 py-4 border-b border-warm-100">
-                        <h2 class="font-semibold text-warm-900 text-sm">Next Events</h2>
+                        <h2 class="font-semibold text-warm-900 text-sm">Next Viewings</h2>
                     </div>
                     <div class="divide-y divide-warm-50">
                         <div class="flex items-center gap-3 px-5 py-3">
@@ -175,8 +173,8 @@ const recentActivity = [
                                 <p class="text-lg font-bold text-warm-900 leading-none">12</p>
                             </div>
                             <div class="min-w-0">
-                                <p class="text-sm font-medium text-warm-800 truncate">Spring Community Fair</p>
-                                <p class="text-xs text-warm-400">10:00 – Main Hall</p>
+                                <p class="text-sm font-medium text-warm-800 truncate">14 Liverpool Road</p>
+                                <p class="text-xs text-warm-400">10:00 — Mr &amp; Mrs Hughes</p>
                             </div>
                         </div>
                         <div class="flex items-center gap-3 px-5 py-3">
@@ -185,8 +183,8 @@ const recentActivity = [
                                 <p class="text-lg font-bold text-warm-900 leading-none">16</p>
                             </div>
                             <div class="min-w-0">
-                                <p class="text-sm font-medium text-warm-800 truncate">Senior Coffee Morning</p>
-                                <p class="text-xs text-warm-400">09:30 – Café</p>
+                                <p class="text-sm font-medium text-warm-800 truncate">7 Howick Park Avenue</p>
+                                <p class="text-xs text-warm-400">09:30 — Open house</p>
                             </div>
                         </div>
                         <div class="flex items-center gap-3 px-5 py-3">
@@ -195,13 +193,13 @@ const recentActivity = [
                                 <p class="text-lg font-bold text-warm-900 leading-none">25</p>
                             </div>
                             <div class="min-w-0">
-                                <p class="text-sm font-medium text-warm-800 truncate">Youth Film Night</p>
-                                <p class="text-xs text-warm-400">18:00 – Activity Room</p>
+                                <p class="text-sm font-medium text-warm-800 truncate">Cob Castle Lane, Longton</p>
+                                <p class="text-xs text-warm-400">18:00 — Second viewing</p>
                             </div>
                         </div>
                     </div>
                     <div class="px-5 py-3 border-t border-warm-100">
-                        <a href="#" class="text-xs font-medium text-brand-600 hover:text-brand-800 transition-colors">Manage events →</a>
+                        <a href="#" class="text-xs font-medium text-brand-600 hover:text-brand-800 transition-colors">Manage diary →</a>
                     </div>
                 </div>
 

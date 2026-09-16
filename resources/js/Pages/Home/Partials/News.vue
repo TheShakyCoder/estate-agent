@@ -1,68 +1,63 @@
 <script setup>
-import { Link } from '@inertiajs/vue3';
-
-const news = [
+const reviews = [
     {
-        date: '1 May 2026',
-        title: 'New OCT scanner now in every eye test',
-        excerpt: 'Our upgraded OCT machine captures a detailed 3D scan of the back of your eye — included in every standard examination at no extra cost.',
-        tag: 'Technology',
-        tagColor: 'bg-brand-100 text-brand-700',
+        body: 'From valuation through to completion, the team were honest, attentive and consistently a step ahead. We had an offer within ten days and never once felt pressured. Easily the best agents we have used.',
+        name: 'The Whitaker family',
+        location: 'Sold in Penwortham',
+        rating: 5,
     },
     {
-        date: '15 Apr 2026',
-        title: 'Lindberg trunk show — Saturday 18 May',
-        excerpt: 'Browse the full Lindberg titanium collection with a brand representative on hand. Book a private appointment to design your bespoke frame.',
-        tag: 'Event',
-        tagColor: 'bg-accent-100 text-accent-700',
+        body: 'Eleanor and Iris went above and beyond. The photography was excellent, the valuation was realistic, and they always picked up the phone. It made a stressful move feel manageable.',
+        name: 'Mr & Mrs Hughes',
+        location: 'Sold in Hutton',
+        rating: 5,
     },
     {
-        date: '1 Apr 2026',
-        title: 'Dry eye clinic now open',
-        excerpt: 'Our new dry eye clinic offers IPL treatment, meibomian gland imaging and tailored care plans for chronic dry eye sufferers.',
-        tag: 'New Service',
-        tagColor: 'bg-emerald-100 text-emerald-700',
+        body: 'As a landlord with three properties in the area, the level of care from the lettings team is what keeps me with Acme. Tenants are well-chosen, compliance is on top of and rent always arrives on time.',
+        name: 'D. Patel',
+        location: 'Landlord, Longton',
+        rating: 5,
     },
 ];
 </script>
 
 <template>
-    <section id="news" class="py-20 bg-white">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="flex items-end justify-between mb-14">
+    <section class="py-20 lg:py-24 bg-cream-100 border-y border-warm-100">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-14 gap-5">
                 <div>
-                    <span class="text-xs font-semibold uppercase tracking-widest text-brand-500 mb-3 block">Latest
-                        News</span>
-                    <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-warm-900">
-                        What's <span class="text-gradient-brand">new</span> at the practice
+                    <p class="eyebrow text-accent-600 mb-3">Client reviews</p>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-brand-900 tracking-display leading-[1.1]">
+                        Trusted by <span class="accent-italic">people</span> who&rsquo;ve moved with us.
                     </h2>
                 </div>
-                <Link href="/news-updates"
-                    class="hidden sm:inline-flex items-center gap-1 text-sm font-medium text-brand-500 hover:text-brand-700 transition-colors">
-                    All news
-                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                </Link>
+                <div class="flex items-center gap-3 text-sm text-warm-600">
+                    <div class="flex">
+                        <svg v-for="i in 5" :key="i" class="w-5 h-5 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.16c.969 0 1.371 1.24.588 1.81l-3.366 2.446a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.366-2.445a1 1 0 00-1.176 0l-3.366 2.445c-.784.57-1.838-.197-1.539-1.118l1.286-3.957a1 1 0 00-.363-1.118L2.072 9.384c-.783-.57-.38-1.81.588-1.81h4.161a1 1 0 00.951-.69l1.287-3.957z"/>
+                        </svg>
+                    </div>
+                    <span class="font-semibold text-brand-900">4.9</span>
+                    <span class="text-warm-500">on Google &middot; 180+ reviews</span>
+                </div>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-7">
-                <article v-for="item in news" :key="item.title"
-                    class="group border border-warm-200 rounded-2xl p-6 hover:border-brand-300 hover:shadow-md transition-all cursor-pointer">
-                    <div class="flex items-center justify-between mb-4">
-                        <span class="px-2.5 py-1 rounded-full text-xs font-semibold" :class="item.tagColor">{{ item.tag }}</span>
-                        <time class="text-xs text-warm-400">{{ item.date }}</time>
-                    </div>
-                    <h3 class="font-semibold text-warm-900 mb-3 leading-snug group-hover:text-brand-600 transition-colors">
-                        {{ item.title }}
-                    </h3>
-                    <p class="text-sm text-warm-500 leading-relaxed">{{ item.excerpt }}</p>
-                    <div class="mt-4 flex items-center gap-1 text-xs font-medium text-brand-500">
-                        Read more
-                        <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            <div class="grid md:grid-cols-3 gap-6">
+                <article v-for="review in reviews" :key="review.name"
+                    class="bg-white border border-warm-100 p-7 flex flex-col">
+                    <!-- Stars -->
+                    <div class="flex mb-5">
+                        <svg v-for="i in review.rating" :key="i" class="w-4 h-4 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.16c.969 0 1.371 1.24.588 1.81l-3.366 2.446a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.366-2.445a1 1 0 00-1.176 0l-3.366 2.445c-.784.57-1.838-.197-1.539-1.118l1.286-3.957a1 1 0 00-.363-1.118L2.072 9.384c-.783-.57-.38-1.81.588-1.81h4.161a1 1 0 00.951-.69l1.287-3.957z"/>
                         </svg>
+                    </div>
+
+                    <p class="text-brand-800 leading-relaxed text-[15px] mb-6 flex-1">&ldquo;{{ review.body }}&rdquo;</p>
+
+                    <div class="pt-5 border-t border-warm-100">
+                        <p class="font-semibold text-brand-900 text-sm">{{ review.name }}</p>
+                        <p class="text-xs text-warm-500 mt-0.5">{{ review.location }}</p>
                     </div>
                 </article>
             </div>

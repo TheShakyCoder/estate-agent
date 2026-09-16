@@ -18,7 +18,7 @@ const submit = () => {
 </script>
 
 <template>
-    <GuestLayout title="Create an account" subtitle="Register for access to the Acme Opticians portal">
+    <GuestLayout title="Create an account" subtitle="Register for access to the Acme Estate Agents office">
         <Head title="Register" />
 
         <form @submit.prevent="submit" class="space-y-5">

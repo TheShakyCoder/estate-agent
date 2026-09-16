@@ -57,20 +57,18 @@ onMounted(() => {
                             :href="route('home')"
                             class="flex items-center gap-3"
                         >
-                            <div class="w-10 h-10 rounded-lg bg-brand-gradient flex items-center justify-center">
-                                <svg class="w-6 h-auto" viewBox="0 0 400 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M155 80 Q200 65 245 80" stroke="#e3a72b" stroke-width="14" stroke-linecap="round" fill="none"/>
-                                    <path d="M30 70 Q15 75 18 95" stroke="#e3a72b" stroke-width="14" stroke-linecap="round" fill="none"/>
-                                    <path d="M370 70 Q385 75 382 95" stroke="#e3a72b" stroke-width="14" stroke-linecap="round" fill="none"/>
-                                    <ellipse cx="95" cy="85" rx="65" ry="50" stroke="#e3a72b" stroke-width="14" fill="none"/>
-                                    <ellipse cx="305" cy="85" rx="65" ry="50" stroke="#e3a72b" stroke-width="14" fill="none"/>
+                            <div class="w-10 h-10 rounded-md bg-brand-gradient flex items-center justify-center">
+                                <svg class="w-6 h-auto" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18 55 L50 25 L82 55" stroke="#fbf9f5" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M28 50 L28 78 L72 78 L72 50" stroke="#fbf9f5" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M44 78 L44 60 L56 60 L56 78" stroke="#c2953d" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </div>
                             <div class="hidden sm:block">
                                 <p
-                                    class="text-sm font-semibold text-brand-600 leading-tight font-display"
+                                    class="text-base font-semibold text-brand-700 leading-tight font-display tracking-display"
                                 >
-                                    Acme Opticians
+                                    Acme Estate Agents
                                 </p>
                                 <p class="text-xs text-warm-400 leading-tight">
                                     {{ title }}
