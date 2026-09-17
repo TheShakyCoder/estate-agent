@@ -14,6 +14,10 @@ onMounted(() => {
     }
 });
 
+function open() {
+    visible.value = true;
+}
+
 function dismiss() {
     try {
         localStorage.setItem(STORAGE_KEY, new Date().toISOString());
@@ -23,6 +27,22 @@ function dismiss() {
 </script>
 
 <template>
+    <!-- Floating trigger -->
+    <button
+        v-if="!visible"
+        type="button"
+        @click="open"
+        aria-label="Show demo notice"
+        class="fixed bottom-5 right-5 z-50 flex items-center justify-center w-12 h-12 rounded-full bg-accent-500 text-white shadow-lg hover:bg-accent-600 transition-colors"
+    >
+        <span class="absolute inset-0 rounded-full bg-accent-500 animate-ping opacity-75"></span>
+        <svg class="relative w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+        </svg>
+    </button>
+
     <Transition
         enter-active-class="transition duration-200 ease-out"
         enter-from-class="opacity-0"
@@ -84,6 +104,24 @@ function dismiss() {
                             This website is a demo. It does not represent a real estate
                             agent or real services. Any names, contact details or content
                             shown here are illustrative only.
+                        </p>
+
+                        <p class="mt-3 text-sm leading-relaxed text-warm-600 flex items-center gap-2">
+                            For more information click here
+                            <a
+                                href="https://fig.ltd.uk/#pricing"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="More information (opens in a new tab)"
+                                class="relative inline-flex items-center justify-center w-5 h-5 rounded-full bg-accent-500 text-white shrink-0"
+                            >
+                                <span class="absolute inset-0 rounded-full bg-accent-500 animate-ping opacity-75"></span>
+                                <svg class="relative w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <line x1="12" y1="8" x2="12" y2="12"/>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"/>
+                                </svg>
+                            </a>
                         </p>
 
                         <button
