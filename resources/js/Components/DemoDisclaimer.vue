@@ -33,10 +33,10 @@ function dismiss() {
         type="button"
         @click="open"
         aria-label="Show demo notice"
-        class="fixed bottom-5 right-5 z-50 flex items-center justify-center w-12 h-12 rounded-full bg-accent-500 text-white shadow-lg hover:bg-accent-600 transition-colors"
+        class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-20 h-20 rounded-full bg-accent-500 text-white shadow-2xl hover:bg-accent-600 transition-colors"
     >
         <span class="absolute inset-0 rounded-full bg-accent-500 animate-ping opacity-75"></span>
-        <svg class="relative w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="relative w-11 h-11" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"/>
             <line x1="12" y1="8" x2="12" y2="12"/>
             <line x1="12" y1="16" x2="12.01" y2="16"/>
